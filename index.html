@@ -1,0 +1,564 @@
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+
+<script id="node">
+	"index.php" == window.location.href.split("/")[4] && window.history.pushState("object or string", "Title", "./");
+	const ss = sessionStorage;
+	const sURL = 'https://insuglico.com.br'; 
+	const MOB = 'desktop';
+	const SA = 0;
+	
+	var urlBackRedirect = '';
+ 
+	(function (b) {
+		var a = {
+			version: "0.0.1",
+			history_api: typeof history.pushState !== "undefined",
+			init: function () {
+				b.location.hash = "#no-back";
+				a.configure();
+			},
+			hasChanged: function () {
+				if (b.location.hash == "#no-back") {
+					b.location.hash = "#";
+					if (b.location.search == null || b.location.search == undefined || b.location.search ==
+						'') {
+						b.location.href = urlBackRedirect;
+					} else {
+						if (location.search.indexOf("src") > -1) {
+							var partes = location.search.slice(1).split('&');
+							var data = {};
+							var new_search = '?';
+							partes.forEach(function (parte) {
+								var chaveValor = parte.split('=');
+								var chave = chaveValor[0];
+								var valor = chaveValor[1];
+								data[chave] = valor;
+							});
+							data.src = data.src + "-->back_home";
+							new_search += JSON.stringify(data).replace(/[{}"]/g, "").replace(/[:]/g, "=")
+								.replace(/[,]/g, "&");
+							b.location.href = urlBackRedirect + new_search;
+						} else {
+							b.location.href = urlBackRedirect + b.location.search + "&src=back_home";
+						}
+					}
+				}
+			},
+			checkCompat: function () {
+				if (b.addEventListener) {
+					b.addEventListener("hashchange", a.hasChanged, false);
+				} else {
+					if (b.attachEvent) {
+						b.attachEvent("onhashchange", a.hasChanged);
+					} else {
+						b.onhashchange = a.hasChanged;
+					}
+				}
+			},
+			configure: function () {
+				if (b.location.hash == "#no-back") {
+					if (this.history_api) {
+						history.pushState(null, "", "#");
+					} else {
+						// b.location.hash = "#";
+						if (b.location.search == null || b.location.search == undefined || b.location.search ==
+							'') {
+							b.location.href = urlBackRedirect;
+						} else {
+							if (location.search.indexOf("src") > -1) {
+								var partes = location.search.slice(1).split('&');
+								var data = {};
+								var new_search = '?';
+								partes.forEach(function (parte) {
+									var chaveValor = parte.split('=');
+									var chave = chaveValor[0];
+									var valor = chaveValor[1];
+									data[chave] = valor;
+								});
+								data.src = data.src + "-->back_home";
+								new_search += JSON.stringify(data).replace(/[{}"]/g, "").replace(/[:]/g, "=")
+									.replace(/[,]/g, "&");
+								b.location.href = urlBackRedirect + new_search;
+							} else {
+								b.location.href = urlBackRedirect + b.location.search + "&src=back_home";
+							}
+						}
+					}
+				}
+				a.checkCompat();
+				a.hasChanged();
+			}
+		};
+		if (typeof define === "function" && define.amd) {
+			define(function () {
+				return a;
+			});
+		} else {
+			if (typeof module === "object" && module.exports) {
+				module.exports = a;
+			} else {
+				b.noback = a;
+			}
+		}
+		a.init();
+	}(window));
+	
+	const DT = [-10800142633,{"7e3a9079301":["<p class=\"elementor-heading-title elementor-size-default\"><span style=\"color: rgb(0, 87, 123);\">ACABE COM OS SINTOMAS DA <span style=\"color: rgb(0, 152, 218);\">DIABETES EM POUCAS HORAS.<\/span><\/span><\/p>","","",""],"7e3a9079303":["Novo produto desenvolvido por pesquisadores da Su\u00e9cia que restaura o SISTEMA INSUL\u00cdNICO agora dispon\u00edvel no Brasil!","","",""],"7e3a9079302":["Compra 100% Segura e Satisfa\u00e7\u00e3o Garantida!","1\/2209260454410.png","","a"],"7e3a9079304":["Coma sem restri\u00e7\u00f5es","","",""],"7e3a9079305":["Aumente a Imunidade","","",""],"7e3a9079306":["Acabe com a Fadiga","","",""],"7e3a9079307":["Controle o Fluxo Urin\u00e1rio","","",""],"7e3a9079308":["Sem emba\u00e7amento na vis\u00e3o","","",""],"7e3a9079309":[" QUERO MEU INSUGLICO","#beneficios","",""],"d794c823f11":["LIVRE DE EXAMES INVASIVOS E CONSULTAS EMBARA\u00c7OSAS","","",""],"d794c823f12":["O INSUGLICO \u00e9 indicado para quem tem doen\u00e7as como diabetes, cardiovasculares, insufici\u00eancia card\u00edaca, que j\u00e1 teve infarto, que tem hist\u00f3ricos de infarto na fam\u00edlia, pessoas com colesterol elevado, fumantes.","","",""],"d794c823f13":["ESTABILIZA A GLICOSE","1\/2209221658595.png","","c"],"d794c823f14":["ESTABILIZA A GLICOSE","","",""],"d794c823f15":["F\u00f3rmula sueca com \u00f3leo de Semente de Persea sendo seus principais componentes a lecitina, o beta-sitosterol, \u00f4mega 9 e as vitaminas A, D, E e K, al\u00e9m de \u00e1cido f\u00f3lico e pot\u00e1ssio. Esse conjunto faz do \u00d3leo de de Semente de Persea um poderoso estabilizador dos n\u00edveis de a\u00e7\u00facar.","","",""],"d794c823f16":["CONTROLA O A\u00c7\u00daCAR NO SANGUE","1\/2209221658594.png","","c"],"d794c823f17":["CONTROLA O A\u00c7\u00daCAR NO SANGUE","","",""],"d794c823f18":["Contendo tamb\u00e9m uma ultra concentra\u00e7\u00e3o de Coenzima Q10 que assim ajuda a diminuir os picos de insulina.","","",""],"d794c823f19":["C\u00c9REBRO ANTI-ALZHEIMER","1\/2209221658593.png","","c"],"d794c823f110":["C\u00c9REBRO ANTI-ALZHEIMER","","",""],"d794c823f111":["Prevenir o Alzheimer \u00e9 garantir que sua identidade, autonomia e independ\u00eancia fiquem preservadas durante toda sua vida.","","",""],"d794c823f112":["AUMENTA A ENERGIA E DISPOSI\u00c7\u00c3O","1\/2209221658592.png","","c"],"d794c823f113":["AUMENTA A ENERGIA E DISPOSI\u00c7\u00c3O","","",""],"d794c823f114":["Aumente sua energia e disposi\u00e7\u00e3o atrav\u00e9s de uma formula exclusiva e poderosa de InsuGlico na ajuda com a Diabetes.","","",""],"d794c823f115":["ESTIMULA A PRODU\u00c7\u00c3O DE INSULINA","1\/2209221658591.png","","c"],"d794c823f116":["ESTIMULA A PRODU\u00c7\u00c3O DE INSULINA","","",""],"d794c823f117":["A formula exclusiva de Insuglico estimula a produ\u00e7\u00e3o de insulina no corpo, o que melhora a disposi\u00e7\u00e3o e o bem estar do dia a dia.","","",""],"d794c823f118":["QUERO DISPOSI\u00c7\u00c3O E ENERGIA","#oferta","",""],"0ab91cfe4b1":["Qual segredo da nossa f\u00f3rmula?","","",""],"0ab91cfe4b2":["SUA PR\u00d3STATA IR\u00c1 DIMINUIR EM POUCAS SEMANAS DE USO!","","",""],"0ab91cfe4b4":["A exclusiva tecnologia sueca feita do \u00d3leo da Semente de Persea com aplica\u00e7\u00e3o sublingual proporciona uma absor\u00e7\u00e3o r\u00e1pida e eficaz por meio da gl\u00e2ndula que temos sob a l\u00edngua, nela vasos que acessam diretamente a corrente sangu\u00ednea absorvem rapidamente seu conte\u00fado e promovem resultados surpreendentes em pouqu\u00edssimo tempo, essa \u00e9 a forma mais eficaz, garantindo at\u00e9 97% de absor\u00e7\u00e3o dos ativos da composi\u00e7\u00e3o. Chegou o fim dos tratamentos invasivos, dolorosos e com resultado tempor\u00e1rio!","","",""],"0ab91cfe4b5":[" QUERO COMPRAR COM GARANTIA","#oferta","",""],"0ab91cfe4b3":["INSUGLICO","1\/2209282226523.png","","b"],"cea7a6b7471":["PENSADO E DESENVOLVIDO PARA AJUDAR VOC\u00ca!","","",""],"cea7a6b7472":["QUEM J\u00c1 USOU AFIRMA QUE VALE A PENA!","","",""],"cea7a6b7477":[" SIM, QUERO COMPRAR AGORA","#oferta","",""],"cea7a6b7473":["<iframe title=\"vimeo-player\" src=\"https:\/\/player.vimeo.com\/video\/748940227?h=79c8874242\" width=\"640\" height=\"1134\" frameborder=\"0\" allowfullscreen><\/iframe>","","",""],"cea7a6b7474":["<iframe title=\"vimeo-player\" src=\"https:\/\/player.vimeo.com\/video\/748937658?h=018632e085\" width=\"640\" height=\"1134\" frameborder=\"0\" allowfullscreen><\/iframe>","","",""],"cea7a6b7475":["<iframe title=\"vimeo-player\" src=\"https:\/\/player.vimeo.com\/video\/748934528?h=f5bfbba0b2\" width=\"640\" height=\"1163\" frameborder=\"0\" allowfullscreen><\/iframe>","","",""],"cea7a6b7476":["<script type=\"text\/javascript\" id=\"scr_62b202f9072e14000a4b0c27\">var s=document.createElement(\"script\");s.src=\"https:\/\/scripts.converteai.net\/7ccc1362-2860-4371-917c-92ecfbec948a\/players\/62b202f9072e14000a4b0c27\/player.js\",s.async=!0,document.head.appendChild(s);<\/script>","","",""],"30788270e74":["5 POTES","1\/2209282052151.png","","b"],"30788270e76":["3 POTES","1\/2209282052152.png","","b"],"30788270e78":["1 POTE","1\/2209282052153.png","","b"],"30788270e710":["12 FRASCOS","1\/2209282052150.png","","b"],"30788270e73":["COMPRAR AGORA","https:\/\/ev.braip.com\/checkout\/plavlw9n\/chew8jnq","",""],"30788270e75":["","https:\/\/ev.braip.com\/checkout\/plalqy2o\/cheq4478","",""],"30788270e77":["","https:\/\/ev.braip.com\/checkout\/plagpwy8\/cheq4478","",""],"30788270e79":["","https:\/\/ev.braip.com\/checkout\/pla2e2qn\/cheq4478","",""],"30788270e71":["","","",""],"30788270e72":["Recomendamos de 3 a 8 frascos para melhores resultados!","","",""],"30788270e711":["","https:\/\/ev.braip.com\/checkout\/pla2e2jd\/cheq4478","",""],"30788270e712":["E APROVEITE OS DESCONTOS PROGRESSIVOS","","",""],"1a8e3722211":["VEJA O PERCENTUAL DE EFIC\u00c1CIA DO LAX Q10","","",""],"1a8e3722212":["Veja nosso comparativo de resultados criado pelo laborat\u00f3rio ap\u00f3s realiza\u00e7\u00e3o de pesquisas!","","",""],"1a8e3722213":["VEJA O PERCENTUAL DE EFIC\u00c1CIA DO LAX Q10","1\/2209160140300.png","","b"],"1a8e3722215":["SIM, QUERO CUIDAR DA MINHA PR\u00d3STATA","#oferta","",""],"1a8e3722214":["O \u00d3leo de Semente de Ab\u00f3bora \u00e9 um super bioativo rico em nutrientes que recuperam a sa\u00fade da pr\u00f3stata e combate todos os sintomas do HPB comumente chamado de pr\u00f3stata aumentada.\r\n\r\nO \u00f3leo extra\u00eddo atrav\u00e9s da prensagem a frio permite uma maior absor\u00e7\u00e3o dos nutrientes encontrados nas sementes de ab\u00f3bora.","","",""],"f736bdc2d01":["Garantia de 90 dias","1\/2209221921230.png","","b"],"f736bdc2d02":["100% SATISFEITO OU TRATAMENTO GRATUITO","","",""],"f736bdc2d03":["Acreditamos tanto no poder da f\u00f3rmula do INSUGLICO que garantimos sua satisfa\u00e7\u00e3o! Se em 90 dias voc\u00ea n\u00e3o notar os benef\u00edcios ou n\u00e3o gostar do produto basta pedir seu dinheiro de volta. Sem perguntas, sem enrola\u00e7\u00e3o e sem letras mi\u00fadas.","","",""],"f736bdc2d04":["QUERO EXPERIMENTAR","#oferta","",""],"409c8d007d1":["LAX Q10 \u00c9 UM COMPOSTO NATURAL RECONHECIDO PELA ANVISA","","",""],"409c8d007d2":["f\u00f3rmula aprovada","1\/2209150128010.png","","b"],"45ab901bbe1":["D\u00daVIDAS SOBRE COMPRAR PELA INTERNET?","","",""],"45ab901bbe2":["Comprar o Gotas Pro + \u00e9 f\u00e1cil, pratico e totalmente seguro.","","",""],"45ab901bbe4":["<p><span style=\"color: rgb(255, 57, 0);\"><strong>1<\/strong><\/span>&nbsp;Selecione o tratamento de sua escolha e clique no bot&atilde;o \"COMPRAR AGORA\". Voc&ecirc; ser&aacute; redirecionado para a p&aacute;gina de efetiva&ccedil;&atilde;o da sua compra.<\/p>","","",""],"45ab901bbe6":["<p><span style=\"color: rgb(255, 57, 0);\"><strong>2<\/strong><\/span>&nbsp;Preencha todos os campos com seus dados cadastrais corretamente para que a compra possa ser aprovada e seu produto possa ser enviado.<\/p>","","",""],"45ab901bbe8":["<p><span style=\"color: rgb(255, 57, 0);\"><strong>3<\/strong><\/span>&nbsp;Escolha cart&atilde;o de cr&eacute;dito ou boleto banc&aacute;rio. Para compras no boleto clique no &iacute;cone de \"Boleto\" ao lado das bandeiras de cart&otilde;es e em seguida clique no bot&atilde;o \"IMPRIMIR BOLETO\". Voc&ecirc; ser&aacute; direcionado para a p&aacute;gina de gera&ccedil;&atilde;o de boleto.<\/p>","","",""],"45ab901bbe3":["tratamento","1\/2208130509460.png","","c"],"45ab901bbe5":["preencha","1\/2208130509461.png","","c"],"45ab901bbe7":["cart\u00e3o","1\/2208130509462.png","","c"],"45ab901bbe9":["como comprar","0\/2208130510420.gif","","d"],"45ab901bbe10":["SIM, QUERO CUIDAR DA MINHA PR\u00d3STATA","#oferta","",""],"9efc8f9b8c1":["QUER FALAR COM UMA DE NOSSAS ATENDENTES?","","",""],"9efc8f9b8c2":["Se voc\u00ea possui d\u00favidas e quer falar direto com uma de nossas consultoras, disponibilizamos um Whatsapp Exclusivo. Para acessar clique no bot\u00e3o abaixo.","","",""],"9efc8f9b8c4":["whatsapp","1\/2209222048280.png","","b"],"9efc8f9b8c3":["","https:\/\/api.whatsapp.com\/send?phone=5537991461343&text=Ol%C3%A1%2C%20Quero%20saber%20mais%20sobre%20o%20INSUGLICO.%20","",""],"de08fd0c01a1":["O que \u00e9 INSUGLICO e quais benef\u00edcios ele oferece?","","",""],"de08fd0c01a2":["Preciso de receita para comprar INSUGLICO?","","",""],"de08fd0c01b1":["O insuglico \u00e9 o melhor suplemento natural de 2022 no combate \u00e0 diabetes o \u00fanico com o ultra composto americano extra\u00eddo do \u00f3leo da semente de Persea . Regulando assim os n\u00edveis de a\u00e7\u00facar do sangue acabando com os picos de insulina e baixando a glicose promovendo assim sa\u00fade ao seu usu\u00e1rio .","","",""],"de08fd0c01b2":["O INSUGLICO n\u00e3o \u00e9 um medicamento, portanto voc\u00ea pode tom\u00e1-lo sem receita m\u00e9dica. No entanto, mulheres gr\u00e1vidas e lactantes devem entrar em contato com uma nutricionista antes de iniciar o tratamento.","","",""],"de08fd0c01a3":["Qual o prazo de entrega?","","",""],"de08fd0c01b3":["O prazo m\u00e9dio de entrega para o Brasil \u00e9 de 5 a 10 dias \u00fateis. O produto s\u00f3 \u00e9 enviado ap\u00f3s a confirma\u00e7\u00e3o do seu pagamento pela administradora do seu cart\u00e3o de cr\u00e9dito ou ap\u00f3s a confirma\u00e7\u00e3o do seu pagamento do boleto. Lembrando que estamos com promo\u00e7\u00e3o de FRETE GR\u00c1TIS por tempo limitado e a compra no cart\u00e3o acelera o processamento do seu pedido.","","",""],"de08fd0c01a4":["Por quanto tempo devo utilizar?","","",""],"de08fd0c01b4":["Recomendamos o uso por no m\u00ednimo 3 meses para obter os melhores resultados, e todos os efeitos do composto. Pode tamb\u00e9m, ser utilizado sempre, at\u00e9 mesmo para a preven\u00e7\u00e3o.","","",""],"de08fd0c01a5":["INSUGLICO tem autoriza\u00e7\u00e3o da Anvisa?","","",""],"de08fd0c01b5":["Sim, o Insuglico \u00e9 certificado e autorizado para comercializa\u00e7\u00e3o em todo territ\u00f3rio Nacional atrav\u00e9s do anexo 1 da RDC 27\/2010 em conformidade com a RDC 23\/2000 da ANVISA.","","",""],"de08fd0c011":["D\u00daVIDAS FREQUENTES","","",""],"de08fd0c012":["TIRE TODAS SUAS D\u00daVIDAS","","",""],"de08fd0c013":["Termos e Condi\u00e7\u00f5es","","",""],"de08fd0c014":["Rastrear Pedido","","",""],"de08fd0c016":["contato@gotapromais.com","","",""],"de08fd0c017":["(37) 3261-4888","","",""],"de08fd0c018":["FORMAS DE PAGAMENTO","1\/2208130521221.png","","b"],"de08fd0c019":["m\u00e9todos de entrega","1\/2208130521220.png","","b"],"de08fd0c0110":["2022 \u00a9Copyright \u00a9 2022 Gota Pro+. Todos os direitos reservados. Todo o conte\u00fado do site, todas as fotos, imagens, logotipos, marcas, layout, aqui ve\u00edculados s\u00e3o de propriedade exclusiva do Gota Pro+. \u00c9 vedada qualquer reprodu\u00e7\u00e3o, total ou parcial, de qualquer elemento de identidade, sem expressa autoriza\u00e7\u00e3o. A viola\u00e7\u00e3o de qualquer direito mencionado implicar\u00e1 na responsabiliza\u00e7\u00e3o c\u00edvel e criminal nos termos da Lei. O Gota Pro+ \u00e9 um tratamento. Seu resultado pode variar de pessoa para pessoa. Os pre\u00e7os dos produtos est\u00e3o sujeitos a altera\u00e7\u00e3o sem aviso pr\u00e9vio. Informamos que Gota Pro+ \u00e9 um tratamento.","","",""],"de08fd0c0111":["<p><span style=\"color: rgb(255, 57, 0);\">ATEN&Ccedil;&Atilde;O:<\/span>&nbsp;DEVIDO A ALTA DEMANDA, H&Aacute; UMA QUANTIDADE LIMITADA DE GOTA PRO+ EM ESTOQUE E&nbsp;<span style=\"color: rgb(255, 57, 0);\">PODE ACABAR A QUALQUER MOMENTO!<\/span><\/p>","","",""],"8e3d2d853114":["126 COMENT\u00c1RIOS","","",""],"8e3d2d853115":["Os coment\u00e1rios s\u00e3o de responsabilidade exclusiva de seus autores e n\u00e3o representam a opini\u00e3o deste site. Se achar algo que viole os termos de uso, denuncie. Leia as perguntas mais frequentes para saber o que \u00e9 impr\u00f3prio ou ilegal.","","",""],"8e3d2d85311":["comment","1\/2208271459171.jpg","","c"],"8e3d2d8531a1":["Comment","1\/2208271459170.jpg","","c"],"8e3d2d8531a2":["Comment","1\/2208271459174.jpg","","c"],"8e3d2d8531a3":["Comment","1\/2208271459171.jpg","","c"],"8e3d2d8531a4":["Comment","1\/2208271459176.png","","c"],"8e3d2d8531b1":["Cristiano Barbosa","","",""],"8e3d2d8531c1":["H\u00c1 3 MESES","","",""],"8e3d2d8531c2":["H\u00c1 3 MESES","","",""],"8e3d2d8531c3":["H\u00c1 3 MESES","","",""],"8e3d2d8531c4":["H\u00c1 3 MESES","","",""],"8e3d2d8531b2":["Juliano Alves","","",""],"8e3d2d8531b3":["Michel Soares","","",""],"8e3d2d8531b4":["Lucas Borges","","",""],"8e3d2d8531d2":["Roberto,eu j\u00e1 tinha feito tudo que podia e n\u00e3o conseguia vencer meu medo de falhar na hora H, agora consigo deixar duro sempre que quiser! Muito feliz! Vou seguir os passos e nunca mais vou me preocupar com isso","","",""],"8e3d2d8531d1":["J\u00e1 fazia dois anos que eu sofria com problemas de ere\u00e7\u00e3o... mas agora tudo passou n\u00e3o tenho mais medo de sair com mulheres. Obrigado isso \u00e9 perfeito!","","",""],"8e3d2d8531d3":["Gente eu achava que era mentira, mas tudo dando certo\u2026. eu me sentia muito pra baixo, sempre com medo de levar uma mulher pra cama. Cheguei ao ponto de ir num m\u00e9dico da minha cidade... Por anos eu sofri com problemas de ere\u00e7\u00e3o, n\u00e3o conseguia chamar mulheres pra sair por causa disso... Com isso, consegui o imposs\u00edvel! Eu n\u00e3o to acreditando.","","",""],"8e3d2d8531d4":["Comprei e est\u00e1 funcionando!!! Ta ficando duro f\u00e1cil f\u00e1cil \ud83d\ude09 vou usar sempre \ud83d\ude00","","",""],"5cacd7bfcb2":["<div id=\"vid_62c82a9122cfe4000a4cc24d\" style=\"position:relative;width:100%;padding: 100% 0 0;\"><img id=\"thumb_62c82a9122cfe4000a4cc24d\" src=\"https:\/\/images.converteai.net\/7ccc1362-2860-4371-917c-92ecfbec948a\/players\/62c82a9122cfe4000a4cc24d\/thumbnail.jpg\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;\"><div id=\"backdrop_62c82a9122cfe4000a4cc24d\" style=\"position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);\"><\/div><\/div><script type=\"text\/javascript\" id=\"scr_62c82a9122cfe4000a4cc24d\">var s=document.createElement(\"script\");s.src=\"https:\/\/scripts.converteai.net\/7ccc1362-2860-4371-917c-92ecfbec948a\/players\/62c82a9122cfe4000a4cc24d\/player.js\",s.async=!0,document.head.appendChild(s);<\/script>","","",""],"41ba0cfe3bb1":["3 FRASCO","1\/2208120326401.png","","b"],"41ba0cfe3bb2":["5 FRASCO","1\/2208120326402.png","","b"],"41ba0cfe3bb3":["1 FRASCO","1\/2208120326400.png","","b"],"41ba0cfe3bb4":["10 FRASCOS","1\/2208120326403.png","","b"],"41ba0cfe3b11":["ESCOLHA O SEU TRATAMENTO","","",""],"41ba0cfe3b2":["LIVRE DE CONSTRANGIMENTOS","","",""],"41ba0cfe3b12":["E APROVEITE OS DESCONTOS PROGRESSIVOS","","",""],"39ff49ef1a1":["Escreva seu depoimento","","",""],"5cacd7bfcb3":["<div id=\"vid_62c82a9f630d5a000c4e07b3\" style=\"position:relative;width:100%;padding: 100% 0 0;\"><img id=\"thumb_62c82a9f630d5a000c4e07b3\" src=\"https:\/\/images.converteai.net\/7ccc1362-2860-4371-917c-92ecfbec948a\/players\/62c82a9f630d5a000c4e07b3\/thumbnail.jpg\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;\"><div id=\"backdrop_62c82a9f630d5a000c4e07b3\" style=\"position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);\"><\/div><\/div><script type=\"text\/javascript\" id=\"scr_62c82a9f630d5a000c4e07b3\">var s=document.createElement(\"script\");s.src=\"https:\/\/scripts.converteai.net\/7ccc1362-2860-4371-917c-92ecfbec948a\/players\/62c82a9f630d5a000c4e07b3\/player.js\",s.async=!0,document.head.appendChild(s);<\/script>","","",""],"5cacd7bfcb4":["<div id=\"vid_62c82aa45c5d42000dd8751a\" style=\"position:relative;width:100%;padding: 100% 0 0;\"><img id=\"thumb_62c82aa45c5d42000dd8751a\" src=\"https:\/\/images.converteai.net\/7ccc1362-2860-4371-917c-92ecfbec948a\/players\/62c82aa45c5d42000dd8751a\/thumbnail.jpg\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;\"><div id=\"backdrop_62c82aa45c5d42000dd8751a\" style=\"position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);\"><\/div><\/div><script type=\"text\/javascript\" id=\"scr_62c82aa45c5d42000dd8751a\">var s=document.createElement(\"script\");s.src=\"https:\/\/scripts.converteai.net\/7ccc1362-2860-4371-917c-92ecfbec948a\/players\/62c82aa45c5d42000dd8751a\/player.js\",s.async=!0,document.head.appendChild(s);<\/script>","","",""],"5cacd7bfcb1":["VEJA OS RESULTADOS DE QUEM J\u00c1 USOU GOTA PRO MAIS","","",""],"5cacd7bfcb5":["SIM, QUERO CUIDAR DA MINHA PR\u00d3STATA","#oferta","",""],"0d37f3f619b1":["3 FRASCO","1\/2208120326401.png","","b"],"0d37f3f619b2":["5 FRASCO","1\/2208120326402.png","","b"],"0d37f3f619b3":["1 FRASCO","1\/2208120326400.png","","b"],"0d37f3f619b4":["10 FRASCO","1\/2208120326403.png","","b"],"0d37f3f61911":["ESCOLHA O SEU TRATAMENTO","","",""],"0d37f3f6192":["LIVRE DE CONSTRANGIMENTOS","","",""],"0d37f3f61912":["E APROVEITE OS DESCONTOS PROGRESSIVOS","","",""],"6fed8b16611":["ATRAV\u00c9S DE UMA NOVA FORMA DE ABORDAGEM O, GOTA PRO +, \u00c9 9X MAIS POTENTE","","",""],"6fed8b16612":["O composto l\u00edquido concentrado, proporciona absor\u00e7\u00e3o r\u00e1pida e eficaz se comparado \u00e0 vers\u00e3o s\u00f3lida ou c\u00e1psulas, pelo simples fato de que o comprimido precisa ser dissolvido pelo nosso organismo para iniciar seu efeito terap\u00eautico e o nosso rapidamente alcan\u00e7a efeitos surpreendentes em quest\u00e3o de minutos. Essa \u00e9 a forma mais eficaz, garantindo at\u00e9 85% da absor\u00e7\u00e3o dos ativos da composi\u00e7\u00e3o deixando seu organismo com maior biodisponibilidade.","","",""],"6fed8b16613":["Gota Pro+","1\/2208031754370.png","","b"],"5e64df85fda2":["Dados pessoais sigilosos n\u00e3o s\u00e3o compartilhados","1\/2209082353104.png","","b"],"5e64df85fdb2":["Dados pessoais sigilosos n\u00e3o s\u00e3o compartilhados","","",""],"5e64df85fda3":["Dados financeiros n\u00e3o s\u00e3o guardados ou compartilhados","1\/2209082353103.png","","b"],"5e64df85fdb3":["Dados financeiros n\u00e3o s\u00e3o guardados ou compartilhados","","",""],"5e64df85fda4":["100% seguro e confi\u00e1vel, compre com seguran\u00e7a","1\/2209082353101.png","","b"],"5e64df85fdb4":["100% seguro e confi\u00e1vel, compre com seguran\u00e7a","","",""],"5e64df85fda5":["Entrega garantida no prazo e embalagem discreta","1\/2209082353100.png","","b"],"5e64df85fdb5":["Entrega garantida no prazo e embalagem discreta","","",""],"857eac9db52":["ACABE COM A EJACULA\u00c7\u00c3O PRECOCE COM APENAS 20 GOTAS DI\u00c1RIAS","","",""],"5e64df85fd2":["COMPRAR O GOTA DO HIMALAIA PRO +, R\u00c1PIDO E SEGURO.","","",""],"857eac9db51":["NOVA F\u00d3RMULA SUB LINGUAL INDICADA POR ESPECIALISTAS","","",""],"5e64df85fd1":["N\u00c3O EST\u00c1 ACOSTUMADO A COMPRAR PELA INTERNET?","","",""],"5e64df85fd3":["EXPERIMENTE J\u00c1","","",""],"857eac9db53":["ACABA COM A EJACULA\u00c7\u00c3O PRECOCE\r\nACABA COM A DISFUN\u00c7\u00c3O ER\u00c9TIL\r\nMELHORA A QUALIDADE DAS ERE\u00c7\u00d5ES\r\nAUMENTE SUA L\u00cdBIDO","","",""],"857eac9db55":["ORGASMOS + INTENSOS + DURADOUROS\r\nTES\u00c3O POTENCIALIZADO\r\nMELHORA O DESEMPENHO SEXUAL\r\nAUMENTA A TESTOSTERONA","","",""],"857eac9db56":["EXPERIMENTE J\u00c1","","",""],"857eac9db54":["Gota Pro+","1\/2208030538030.png","","b"],"6d174c6fd411":["ESCOLHA O SEU TRATAMENTO","","",""],"6d174c6fd42":["LIVRE DE CONSTRANGIMENTOS","","",""],"6d174c6fd412":["E APROVEITE OS DESCONTOS PROGRESSIVOS","","",""],"6d174c6fd4b1":["3 FRASCO","1\/2208120326401.png","","b"],"6d174c6fd4b2":["5 FRASCO","1\/2208120326402.png","","b"],"6d174c6fd4b3":["1 FRASCO","1\/2208120326400.png","","b"],"6d174c6fd4b4":["10 FRASCO","1\/2208120326403.png","","b"],"54efbf8d9b1":["Aviso Legal","","",""],"54efbf8d9b2":["Tire todas as suas d\u00favidas","","",""],"54efbf8d9b3":["Termos e Condi\u00e7\u00f5es","","",""],"54efbf8d9b4":["Rastrear Pedido","","",""],"54efbf8d9b7":["(37) 3261-4888","","",""],"54efbf8d9b8":["Cart\u00f5es","1\/2209091509231.png","","b"],"54efbf8d9b9":["Coreios","1\/2209091506301.png","","b"],"54efbf8d9b10":["2022 Copyright \u00a9LAX Q10. Todos os direitos reservados. Todo o conte\u00fado do site, todas as fotos, imagens, logotipos, marcas, layout, aqui ve\u00edculados s\u00e3o de propriedade exclusiva da LAX Q10.\r\n\u00c9 vedada qualquer reprodu\u00e7\u00e3o, total ou parcial, de qualquer elemento de identidade, sem expressa autoriza\u00e7\u00e3o. A viola\u00e7\u00e3o de qualquer direito mencionado implicar\u00e1 na responsabiliza\u00e7\u00e3o c\u00edvel e criminal nos termos da Lei.\r\nInformamos que LAX Q10 \u00e9 um tratamento. Seu resultado pode variar de pessoa para pessoa.\r\nOs pre\u00e7os dos produtos est\u00e3o sujeitos a altera\u00e7\u00e3o sem aviso pr\u00e9vio.\u200b","","",""],"54efbf8d9b11":["\"Este site n\u00e3o \u00e9 afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que voc\u00ea sair do Facebook, a responsabilidade n\u00e3o \u00e9 deles e sim do nosso site.\"","","",""],"d64c327f2d2":["","","",""],"d64c327f2d1":["ESSE V\u00cdDEO VAI ESTAR DISPON\u00cdVEL SOMENTE HOJE...","","",""],"d64c327f2d3":["ATEN\u00c7\u00c3O: PERMANE\u00c7A NA P\u00c1GINA OU SEU PROGRESSO SER\u00c1 REINICIADO.","","",""],"d64c327f2d4":["SIM, QUERO CUIDAR DA MINHA SA\u00daDE ","","",""],"ebb1d139781":["SIM, QUERO CUIDAR DA MINHA PR\u00d3STATA","","",""],"167e44c3f0b1":["3 FRASCO","1\/2208120326401.png","","b"],"167e44c3f0b2":["5 FRASCO","1\/2208120326402.png","","b"],"167e44c3f0b3":["1 FRASCO","1\/2208120326400.png","","b"],"167e44c3f0b4":["10 FRASCO","1\/2208120326403.png","","b"],"167e44c3f01":["ESCOLHA O SEU TRATAMENTO","","",""],"167e44c3f02":["LIVRE DE CONSTRANGIMENTOS","","",""],"167e44c3f03":["E APROVEITE OS DESCONTOS PROGRESSIVOS","","",""],"04ac8efb771":["ESCOLHA O SEU TRATAMENTO","","",""],"04ac8efb772":["LIVRE DE CONSTRANGIMENTOS","","",""],"04ac8efb773":["E APROVEITE OS DESCONTOS PROGRESSIVOS","","",""],"04ac8efb77b1":["3 FRASCOS","1\/2208120326401.png","","b"],"04ac8efb77b2":["5 FRASCOS","1\/2208120326402.png","","b"],"04ac8efb77b3":["1 FRASCO","1\/2208120326400.png","","b"],"04ac8efb77b4":["10 FRASCOS","1\/2208120326403.png","","b"],"8ceff652181":["PARAB\u00c9NS, PIX PAGO COM SUCESSO!","","",""],"8ceff652182":["Sua encomenda ser\u00e1 postada no prazo de 1 a 3 dias \u00fateis e logo ser\u00e1 enviada pelos Correios.","","",""],"8ceff652183":["O prazo para chegar em sua casa \u00e9 de 10 dias \u00fateis.","","",""],"8ceff652184":["Gota Pro+","1\/2208030538030.png","","b"],"8ceff652185":["DESENVOLVIDO PARA QUEM AMA CUIDAR DE SI","","",""],"8ceff652186":["Testado, Gota pro + \u00e9 feito para todos os homens, desenvolvido para pessoas que buscam sa\u00fade e efic\u00e1cia, sem preocupa\u00e7\u00f5es com efeitos colaterais.","","",""],"8ceff652187":["RASTREAR PEDIDO","","",""],"8ceff652188":["Gota Pro+","1\/2208130501080.png","","b"],"8ceff6521810":["AVISO LEGAL","","",""],"8ceff6521815":["Cart\u00f5es","1\/2209121658350.png","","b"],"8ceff6521817":["site seguro","1\/2209121658351.png","","b"],"8ceff6521811":["RASTREAR PEDIDO","","",""],"8ceff6521812":["POL\u00cdTICAS DE PRIVACIDADE","","",""],"8ceff6521813":["TERMOS E CONDI\u00c7\u00d5ES","","",""],"8ceff652189":["LINKS \u00daTEIS","","",""],"8ceff6521814":["FORMAS DE PAGAMENTO","","",""],"8ceff6521816":["COMPRA 100% SEGURA","","",""],"7e3c109f791":["AVISO LEGAL","","",""],"7e3c109f792":["Os resultados podem variar de acordo com a pessoa.\r\n\r\nTodos os testemunhos, apesar de serem reais e gentilmente enviados por clientes, N\u00c3O representam resultados \u00fanicos, j\u00e1 que cada indiv\u00edduo \u00e9 diferente do outro.\r\n\r\nJamais fa\u00e7a alguma mudan\u00e7a na alimenta\u00e7\u00e3o ou no exerc\u00edcio f\u00edsico sem consultar seu m\u00e9dico ou profissional de sa\u00fade. Somente um profissional da \u00e1rea pode fazer uma avalia\u00e7\u00e3o detalhada e decidir se voc\u00ea est\u00e1 apto ou n\u00e3o a essas altera\u00e7\u00f5es. Nenhuma informa\u00e7\u00e3o desta p\u00e1gina substitui uma consulta com um m\u00e9dico ou nutricionista.\r\n\r\nTodos os conhecimentos, dicas e truques compartilhados nesta p\u00e1gina s\u00e3o meramente educativos e explicativos em rela\u00e7\u00e3o ao produto comercializado. Em caso de d\u00favida, envie um e-mail para contato@gotadohimalaia.com, e entraremos em contato com o mais breve poss\u00edvel.","","",""],"553374bf9e1":["PARAB\u00c9NS, SEU PIX FOI GERADO COM SUCESSO!","","",""],"553374bf9e2":["Sua encomenda ser\u00e1 postada ap\u00f3s a confirma\u00e7\u00e3o do pagamento do Pix","","",""],"553374bf9e3":["O prazo para chegar em sua casa \u00e9 de 10 dias \u00fateis.","","",""],"553374bf9e5":["DESENVOLVIDO PARA QUEM AMA CUIDAR DE SI","","",""],"553374bf9e6":["Testado, InsuGlico \u00e9, desenvolvido para pessoas que buscam sa\u00fade e efic\u00e1cia, sem preocupa\u00e7\u00f5es com efeitos colaterais.","","",""],"553374bf9e7":["RASTREAR PEDIDO","https:\/\/pedidozz.com\/","",""],"553374bf9e4":["INSUGLICO","1\/2209260454410.png","","b"],"553374bf9e8":["Gota Pro+","1\/2209121656040.png","","b"],"553374bf9e9":[" LINKS \u00daTEIS","","",""],"553374bf9e10":["AVISO LEGAL","","",""],"553374bf9e11":["RASTREAR PEDIDO","","",""],"553374bf9e12":["POL\u00cdTICAS DE PRIVACIDADE","","",""],"553374bf9e13":["TERMOS E CONDI\u00c7\u00d5ES","","",""],"553374bf9e14":["FORMAS DE PAGAMENTO","","",""],"553374bf9e16":["COMPRA 100% SEGURA","","",""],"553374bf9e15":["FORMAS DE PAGAMENTO","1\/2209121658350.png","","b"],"553374bf9e17":["COMPRA 100% SEGURA","1\/2209121658351.png","","b"],"99f5a6fd3c1":["PARAB\u00c9NS, SUA COMPRA FOI APROVADA!","","",""],"99f5a6fd3c4":["Gota Pro+","1\/2209260454410.png","","b"],"99f5a6fd3c2":["Sua encomenda ser\u00e1 postada no prazo de 1 a 3 dias \u00fateis e logo ser\u00e1 enviada pelos Correios.","","",""],"99f5a6fd3c3":["O prazo para chegar em sua casa \u00e9 de 10 dias \u00fateis.","","",""],"99f5a6fd3c5":["DESENVOLVIDO PARA QUEM AMA CUIDAR DE SI","","",""],"99f5a6fd3c6":["Testado, InsuGlico \u00e9, desenvolvido para pessoas que buscam sa\u00fade e efic\u00e1cia, sem preocupa\u00e7\u00f5es com efeitos colaterais.","","",""],"99f5a6fd3c7":["RASTREAR PEDIDO","https:\/\/pedidozz.com\/","",""],"99f5a6fd3c8":["Gota Pro+","1\/2208130501080.png","","b"],"99f5a6fd3c9":["LINKS \u00daTEIS","","",""],"99f5a6fd3c14":["FORMAS DE PAGAMENTO","","",""],"99f5a6fd3c16":["COMPRA 100% SEGURA","","",""],"99f5a6fd3c10":["AVISO LEGAL","","",""],"99f5a6fd3c11":["RASTREAR PEDIDO","","",""],"99f5a6fd3c12":["POL\u00cdTICAS DE PRIVACIDADE","","",""],"99f5a6fd3c13":["TERMOS E CONDI\u00c7\u00d5ES","","",""],"99f5a6fd3c15":["FORMAS DE PAGAMENTO","1\/2209121658350.png","","b"],"99f5a6fd3c17":["COMPRA 100% SEGURA","1\/2209121658351.png","","b"],"23b47891a21":["PARAB\u00c9NS, SEU PEDIDO FOI RESERVADO COM SUCESSO!","","",""],"23b47891a22":["Estamos aguardando a confirma\u00e7\u00e3o do pagamento do seu boleto para enviarmos seu pedido.","","",""],"23b47891a23":["O prazo para chegar em sua casa \u00e9 de 10 dias \u00fateis.","","",""],"23b47891a24":["INSUGLICO","1\/2209260454410.png","","b"],"23b47891a28":["Gota Pro+","1\/2208130501080.png","","b"],"23b47891a29":["LINKS \u00daTEIS","","",""],"23b47891a210":["AVISO LEGAL","","",""],"23b47891a211":["RASTREAR PEDIDO","","",""],"23b47891a212":["POL\u00cdTICAS DE PRIVACIDADE","","",""],"23b47891a213":["TERMOS E CONDI\u00c7\u00d5ES","","",""],"23b47891a215":["FORMAS DE PAGAMENTO","1\/2209121658350.png","","b"],"23b47891a217":["COMPRA 100% SEGURA","1\/2209121658351.png","","b"],"23b47891a216":["COMPRA 100% SEGURA","","",""],"23b47891a214":["FORMAS DE PAGAMENTO","","",""],"f5aa619ff01":["NOSSO SISTEMA EST\u00c1 PROCESSANDO O PAGAMENTO!","","",""],"f5aa619ff02":["ISSO PODER\u00c1 LEVAR ALGUMAS HORAS!","","",""],"f5aa619ff03":["INSUGLICO","1\/2209260454410.png","","a"],"f5aa619ff04":["O prazo para chegar em sua casa \u00e9 de 10 dias \u00fateis. ap\u00f3s a postagem","","",""],"f5aa619ff05":["O PRAZO PARA CHEGAR EM SUA CASA \u00c9 DE 10 DIAS \u00daTEIS. AP\u00d3S A POSTAGEM","","",""],"f5aa619ff06":["Testado, InsuGlico \u00e9, desenvolvido para pessoas que buscam sa\u00fade e efic\u00e1cia, sem preocupa\u00e7\u00f5es com efeitos colaterais.","","",""],"f5aa619ff07":["RASTREAR PEDIDO","https:\/\/pedidozz.com\/","",""],"f5aa619ff08":["Gota Pro+","0\/2209132118400.svg","","d"],"f5aa619ff09":["LINKS \u00daTEIS","","",""],"f5aa619ff014":["FORMAS DE PAGAMENTO","","",""],"f5aa619ff016":["COMPRA 100% SEGURA","","",""],"f5aa619ff015":["FORMAS DE PAGAMENTO","1\/2209121658350.png","","c"],"f5aa619ff017":["Compra 100% Segura e Satisfa\u00e7\u00e3o Garantida!","1\/2209121658351.png","","c"],"f5aa619ff010":["AVISO LEGAL","","",""],"f5aa619ff011":["RASTREAR PEDIDO","","",""],"f5aa619ff012":["POL\u00cdTICAS DE PRIVACIDADE","","",""],"f5aa619ff013":["TERMOS E CONDI\u00c7\u00d5ES","","",""],"1285fe85111":["Gota Pro+","0\/2209132118400.svg","","d"],"1285fe85112":["POL\u00cdTICA DE PRIVACIDADE","","",""],"1285fe85113":["Esta Pol\u00edtica de Privacidade foi formulada com o intuito de manter a privacidade e seguran\u00e7a das informa\u00e7\u00f5es coletadas de nossos clientes e usu\u00e1rios. O objetivo deste documento \u00e9 esclarecer quais informa\u00e7\u00f5es ser\u00e3o coletadas dos usu\u00e1rios em nosso site e de que forma estes dados ser\u00e3o utilizados. Pol\u00edtica de Privacidade N\u00f3s do Gota Pro + temos o comprometimento em resguardar sua privacidade, por este motivo todas suas informa\u00e7\u00f5es pessoais recolhidas ser\u00e3o utilizadas para ajudar a tornar sua experi\u00eancia em nosso site o mais agrad\u00e1vel poss\u00edvel. Esta garantia de confidencialidade de seus dados pessoais utilizados em nosso site \u00e9 de extrema import\u00e2ncia para n\u00f3s. Todas as informa\u00e7\u00f5es pessoais de nossos usu\u00e1rios e clientes que naveguem pelo site do Gota Pro + ser\u00e3o tratadas em concord\u00e2ncia com a Lei da Prote\u00e7\u00e3o de Dados Pessoais de 26 de outubro de 1998 (Lei n.\u00ba 67\/98). As informa\u00e7\u00f5es pessoais recolhidas podem incluir o seu nome, e-mail, n\u00famero de telefone, morada, data de nascimento e\/ou outros. O uso do Gota Pro + pressup\u00f5e a aceita\u00e7\u00e3o deste Acordo de privacidade. Sobre o acesso e divulga\u00e7\u00e3o de suas informa\u00e7\u00f5es pessoais Nenhuma informa\u00e7\u00e3o pessoal poder\u00e1 ser divulgada publicamente. N\u00f3s tamb\u00e9m nos comprometemos a n\u00e3o vender ou repassar suas informa\u00e7\u00f5es para terceiros. A \u00fanica exce\u00e7\u00e3o est\u00e1 em casos em que essas informa\u00e7\u00f5es forem exigidas judicialmente. Al\u00e9m disso, embora trabalhemos com boas pr\u00e1ticas de prote\u00e7\u00e3o e seguran\u00e7a, nenhum servi\u00e7o web possui 100% de garantia contra invas\u00f5es e n\u00e3o podemos nos responsabilizar caso isso ocorra. Sobre o compartilhamento de conte\u00fado nas redes sociais Ao clicar nos bot\u00f5es de compartilhamento de conte\u00fado nas m\u00eddias sociais dispon\u00edveis em nossas p\u00e1ginas, o usu\u00e1rio estar\u00e1 publicando o conte\u00fado por meio de seu perfil na rede selecionada. N\u00f3s do Gota Pro + n\u00e3o teremos acesso ao login e senha dos usu\u00e1rios nessas redes, nem publicaremos conte\u00fado em seu nome sem que voc\u00ea realize esta a\u00e7\u00e3o. Sobre o cancelamento da assinatura e altera\u00e7\u00e3o\/exclus\u00e3o de informa\u00e7\u00f5es pessoais Voc\u00ea poder\u00e1 optar a qualquer momento por n\u00e3o receber mais qualquer tipo de e-mail da nossa equipe. Em todos os e-mails que enviamos haver\u00e1 sempre um link para cancelar a assinatura dispon\u00edvel nas \u00faltimas linhas. Ao clicar nesse link voc\u00ea ser\u00e1 automaticamente descadastrado da lista e n\u00e3o receber\u00e1 mais nossos e-mails, nem ficar\u00e1 por dentro das promo\u00e7\u00f5es e novidades. \u00c9 importante mencionar que ao preencher qualquer formul\u00e1rio novamente ficar\u00e1 caracterizada a reinser\u00e7\u00e3o do seu e-mail \u00e0 lista. Portanto, a requisi\u00e7\u00e3o de cancelamento deve ser feita novamente caso seja de seu interesse. An\u00fancios Assim como outros websites, n\u00f3s tamb\u00e9m coletamos e utilizamos informa\u00e7\u00f5es contidas em an\u00fancios, que podem incluir seu endere\u00e7o IP (Internet Protocol), o seu ISP (Internet Service Provider), o browser que voc\u00ea utilizou para visitar nosso website, o tempo de visita e n\u00famero de p\u00e1ginas visitadas. Os Cookies e Web Beacons Utilizamos cookies para armazenar informa\u00e7\u00f5es, como suas prefer\u00eancias pessoais quando visita nosso website. Tamb\u00e9m utilizamos publicidade de terceiros em nosso website, que tamb\u00e9m poder\u00e3o utilizar tecnologias como cookies e\/ou web beacons quando publicitam no nosso website, o que far\u00e1 com que esses publicit\u00e1rios (como o Google atrav\u00e9s do Google AdSense) tamb\u00e9m recebam a sua informa\u00e7\u00e3o pessoal, como o endere\u00e7o IP, o seu ISP, o seu browser, etc. Esta fun\u00e7\u00e3o \u00e9 geralmente utilizada para geotargeting (mostrar publicidade de Lisboa apenas aos leitores oriundos de Lisboa por exemplo) ou apresentar publicidade direcionada a um tipo de utilizador (como mostrar publicidade de restaurante a um utilizador que visita sites de culin\u00e1ria regularmente). Voc\u00ea det\u00e9m o poder de desligar os seus cookies, nas op\u00e7\u00f5es do seu browser ou efetuando altera\u00e7\u00f5es nas ferramentas de programas Anti-Virus, como o Norton Internet Security. No entanto, isso poder\u00e1 alterar a forma como interage com o nosso website, ou outros websites. Isso poder\u00e1 afetar ou n\u00e3o permitir que fa\u00e7a logins em programas, sites ou f\u00f3runs da nossa e de outras redes. Mudan\u00e7as na Pol\u00edtica de Privacidade Essa Pol\u00edtica de Privacidade pode passar por atualiza\u00e7\u00f5es. Desta forma, recomendamos visitar periodicamente esta p\u00e1gina para que voc\u00ea tenha conhecimento sobre as poss\u00edveis modifica\u00e7\u00f5es e fique sempre atualizado. Antes de usar informa\u00e7\u00f5es para outros fins que n\u00e3o os definidos nesta Pol\u00edtica de Privacidade, solicitaremos sua autoriza\u00e7\u00e3o. O uso do Gota Pro + pressup\u00f5e a aceita\u00e7\u00e3o deste Acordo de privacidade. Deste modo, ao navegar ou utilizar este site voc\u00ea usu\u00e1rio reconhece ter lido, entendido e concordado com todos os termos aqui estabelecidos. Contate-nos para esclarecimento de d\u00favidas: qualquer d\u00favida em rela\u00e7\u00e3o \u00e0 nossa pol\u00edtica de privacidade pode ser esclarecida entrando em contato conosco pelo e-mail suporte@gotapromais.com.br","","",""],"e6a1779eff2":["Trocas e Devolu\u00e7\u00f5es","","",""],"e6a1779eff1":["Gota Pro+","0\/2209132118400.svg","","d"],"e6a1779eff3":["1. CONSIDERA\u00c7\u00d5ES GERAIS As ocorr\u00eancias que envolvam troca ou devolu\u00e7\u00e3o devem ser comunicadas exclusivamente pelo e-mail de atendimento suporte@gotagotapromais.com, por meio do qual dever\u00e1 ser informado o nome e n\u00famero do CPF cadastrado no momento da compra. No momento do recebimento do seu produto, recuse o mesmo caso: A embalagem esteja aberta ou avariada; O produto esteja avariado; Produto em desacordo com o pedido; Falta de acess\u00f3rios. 1.1. Devolu\u00e7\u00e3o por Arrependimento\/Desist\u00eancia Para devolver um produto por arrependimento, ou simplesmente por desist\u00eancia, as seguintes condi\u00e7\u00f5es dever\u00e3o ser observadas: O prazo para desistir da compra do produto \u00e9 de at\u00e9 sete (7) dias corridos, a contar da data do recebimento; O produto dever\u00e1 ser encaminhado na embalagem original, sem ind\u00edcios de uso e sem viola\u00e7\u00e3o do lacre original. 1.2. Em caso de troca, devolu\u00e7\u00e3o e cancelamento Se ocorrer qualquer das hip\u00f3teses citadas no t\u00f3pico 1 (Considera\u00e7\u00f5es Gerais), poder\u00e1 o consumidor realizar a troca, a devolu\u00e7\u00e3o e\/ou o cancelamento, dentro do prazo indicado no subt\u00f3pico 1.1 (Devolu\u00e7\u00e3o por Arrependimento\/Desistencia). Em qualquer dos casos, dever\u00e1 o consumidor entrar em contato via e-mail suporte@gotagotapromais.com, para comunicar o fato. 1.3. Custos para envio Caso o consumidor receba o(s) produto(s) nas condi\u00e7\u00f5es elencadas no t\u00f3pico 1 (Condi\u00e7\u00f5es Gerais), necessitar\u00e1 envia-los para a empresa Natural Caps conforme j\u00e1 mencionado. O consumidor, se atentando para as advert\u00eancias de que n\u00e3o deve receber a mercadoria caso ela apresente embalagem aberta ou avariada, produto avariado, em desacordo com o pedido, ou faltando acess\u00f3rios, a pr\u00f3pria Natural Caps arcar\u00e1 com os custos de correio para que a mercadoria retorne a empresa. Em contrapartida, caso o consumidor n\u00e3o se atente as advert\u00eancias, e receba a mercadoria nas condi\u00e7\u00f5es indicadas anteriormente, a Natural Caps n\u00e3o arcar\u00e1 com os custos de postagem, ficando por conta do cliente pag\u00e1-los diretamente nas ag\u00eancias dos correios no momento do envio de volta para nosso centro de distribui\u00e7\u00e3o. 1.4. Prazo para realiza\u00e7\u00e3o da troca A Natural Caps tem at\u00e9 10 (dez) dias \u00fateis, contados a partir da data do recebimento do produto em seu Centro de Distribui\u00e7\u00e3o, para verificar se a solicita\u00e7\u00e3o preenche os requisitos da Pol\u00edtica de Trocas e Devolu\u00e7\u00f5es. Em caso afirmativo, enviar\u00e1 outro produto ao cliente. 1.5. Ressarcimento de valores de pedidos cancelados O ressarcimento do valor investido pelo consumidor ser\u00e1 feito utilizando a forma de pagamento escolhida no processo de compras: Em compras pagas com CART\u00c3O DE CR\u00c9DITO, a administradora do seu cart\u00e3o ser\u00e1 notificada e o estorno ocorrer\u00e1 dentro das duas pr\u00f3ximas faturas; Em compras pagas com BOLETO BANC\u00c1RIO, a restitui\u00e7\u00e3o ser\u00e1 efetuada por meio de dep\u00f3sito na conta corrente indicada pelo consumidor em at\u00e9 10 dias \u00fateis. \u00c9 necess\u00e1rio que o CPF do titular da conta corrente seja o mesmo que consta no pedido. Caso o CPF n\u00e3o seja o mesmo, o consumidor dever\u00e1 enviar uma autoriza\u00e7\u00e3o registrada em cart\u00f3rio para dep\u00f3sito. IMPORTANTE: em caso de devolu\u00e7\u00e3o, a restitui\u00e7\u00e3o dos valores ser\u00e1 processada somente ap\u00f3s o recebimento e an\u00e1lise das condi\u00e7\u00f5es do produto. O reembolso ser\u00e1 realizado no valor total do produto devolvido\/cancelado, somando-se o valor do frete. As disposi\u00e7\u00f5es acima n\u00e3o se aplicam em casos de amostra gr\u00e1tis.","","",""],"7e3a9079300":["INSUGLICO","1\/2209260440550.png","","c"],"7e3a90793010":["COMPRA 100% SEGURA","1\/2209221710560.png","","c"],"409c8d007d3":["O LAX Q10 \u00e9 reconhecido na Anvisa e no Minist\u00e9rio da Sa\u00fade garantindo sua efic\u00e1cia, qualidade e seguran\u00e7a.","","",""],"d794c823f121":["CORA\u00c7\u00c3O ANTI-INFARTO","1\/2209221658590.png","","c"],"d794c823f119":["CORA\u00c7\u00c3O ANTI-INFARTO","","",""],"d794c823f120":["O \u00f3leo de abacate previne doen\u00e7as cardiovasculares devido ao seu alto teor de \u00e1cido ol\u00e9ico, uma gordura monoinsaturada que auxilia na redu\u00e7\u00e3o do LDL-colesterol e aumento do HDL-colesterol.","","",""],"d794c823f122":["COMPRA 100% SEGURA","1\/2209221710560.png","","c"],"cea7a6b7478":["COMPRA 100% SEGURA","1\/2209142112200.png","","c"],"0ab91cfe4b6":["COMPRA 100% SEGURA","1\/2209142112200.png","","c"],"1a8e3722216":["COMPRA 100% SEGURA","1\/2209142112200.png","","c"],"1a8e372221a1":["REGULA OS N\u00cdVEIS DE A\u00c7\u00daCAR NO SANGUE","","",""],"1a8e372221b1":["94","","",""],"1a8e372221a2":["AUMENTO DA IMUNIDADE","","",""],"1a8e372221b2":["88","","",""],"1a8e372221a3":["REGULA A PRODU\u00c7\u00c3O DE INSULINA","","",""],"1a8e372221b3":["90","","",""],"1a8e372221b4":["95","","",""],"1a8e372221a4":["REDUZ A GLICEMIA","","",""],"1a8e372221a5":["ENERGIA RENOVADA","","",""],"1a8e372221b5":["98","","",""],"1a8e372221b6":["96","","",""],"1a8e372221a6":["CONTROLE DA DIABETES","","",""],"de08fd0c01a6":["Como tomar o INSUGLICO?","","",""],"de08fd0c01b6":["Voc\u00ea precisa tomar 12 gotas ao dias ap\u00f3s a principal refei\u00e7\u00e3o do dia.","","",""],"7e3a90793011":["Cicatriza\u00e7\u00e3o Normalizada","","",""],"7e3a90793012":["Sem enjoos","","",""],"7e3a90793013":["Acabe Com os Formigamentos","","",""],"d794c823f10":["INSULGLICO","1\/2209271819400.png","","b"],"38f5e8ecc012":["QUERO DISPOSI\u00c7\u00c3O E ENERGIA","#oferta","",""],"38f5e8ecc03":["Press\u00e3o 12 por 8","","",""],"38f5e8ecc04":["Preserva sua mem\u00f3ria","","",""],"38f5e8ecc05":["Barreira de Imunidade","","",""],"38f5e8ecc06":["Antioxidante Natural","","",""],"38f5e8ecc07":["Estimula a produ\u00e7\u00e3o de insulina","","",""],"38f5e8ecc08":["Cora\u00e7\u00e3o Anti-Infarto","","",""],"38f5e8ecc09":["Energia da Juventude","","",""],"38f5e8ecc010":["C\u00e9rebro Anti-Alzheimer","","",""],"38f5e8ecc011":["APROVADO PELA ANVISA","1\/2209221737590.png","","b"],"38f5e8ecc01":["RECUPERE A FELICIDADE DE VIVER COM DIAS MAIS TRANQUILOS E SAUD\u00c1VEIS","","",""],"38f5e8ecc02":["VOC\u00ca TAMB\u00c9M MERECE SER LIVRE DOS SINTOMAS DA DIABETES!","","",""],"d9174292281":["Desenvolvido e Recomendado por Especialistas!","","",""],"d9174292282":["A f\u00f3rmula do Insuglico cont\u00e9m uma exclusiva f\u00f3rmula com tecnologia avan\u00e7ada e importada dos Estados Unidos para melhorar o dia a dia de diab\u00e9ticos com uma \u00f3tima absor\u00e7\u00e3o no organismo, deixando seus dias com mais energia e disposi\u00e7\u00e3o com o controle da diabetes.","","",""],"d9174292283":["Coenzima Q10","1\/2209221908125.png","","c"],"d9174292286":["Resveratrol Americano","1\/2209221908124.png","","c"],"d9174292287":["Resveratrol Americano","","",""],"d9174292284":["Coenzima Q10","","",""],"d9174292289":["\u00d3leo da Semente de Persea","1\/2209221908123.png","","c"],"d91742922810":["\u00d3leo da Semente de Persea","","",""],"d91742922812":["Astaxantina","1\/2209221908122.png","","c"],"d91742922815":["Vitamina C","1\/2209221908121.png","","c"],"d91742922821":["Vitamina E","1\/2209221908120.png","","c"],"d91742922819":["Vitamina E","","",""],"d91742922816":["Vitamina C","","",""],"d91742922813":["Astaxantina","","",""],"d9174292285":["A suplementa\u00e7\u00e3o com Coenzima Q10 ajuda a aumentar a sensibilidade \u00e0 insulina e melhora os n\u00edveis de a\u00e7\u00facar no sangue. Indispens\u00e1vel para diminuir os picos de insulina.","","",""],"d9174292288":["A suplementa\u00e7\u00e3o com resveratrol + tratamento hipoglic\u00eamico convencional se mostra eficaz na melhora de fatores de risco cardiovasculares e do controle glic\u00eamico em pacientes com diabetes. Assim o resveratrol pode ser utilizado como terapia adjuvante no manejo da diabetes.","","",""],"d91742922811":["O \u00d3leo de Semente de Persea Americano \"conhecido como \u00f3leo de abacate americano\" tem como principais componentes a lecitina, o beta-sitosterol, \u00f4mega 9 e as vitaminas A, D, E e K, al\u00e9m de \u00e1cido f\u00f3lico e pot\u00e1ssio. auxilia na preven\u00e7\u00e3o e controle de diversas doen\u00e7as, como diabetes e colesterol alto.","","",""],"d91742922814":["Astaxantina em Pacientes Diab\u00e9ticos Melhora os Marcadores da Inflama\u00e7\u00e3o e do Estresse Oxidativo. A astaxantina \u00e9 um caratenoide que pertence \u00e0 classe das xantofilas e possui capacidade antioxidante e poss\u00edvel papel na redu\u00e7\u00e3o do risco de algumas doen\u00e7as.","","",""],"d91742922817":["\u201cAs propriedades antioxidantes da vitamina C podem ajudar a neutralizar os altos n\u00edveis de radicais livres encontrados em pessoas com Diabetes e \u00e9 encorajador ver que isso beneficia v\u00e1rias co-morbidades comuns da doen\u00e7a, como a press\u00e3o alta .","","",""],"d91742922820":["Al\u00e9m disso, um estudo publicado no Journal of Clinical & Diagnostic Research descobriu que a suplementa\u00e7\u00e3o de vitamina E ajuda a retardar o aparecimento das complica\u00e7\u00f5es do diabetes, bem como a evitar a progress\u00e3o de suas complica\u00e7\u00f5es.","","",""],"d91742922822":["COMPRA 100% SEGURA","1\/2209221710560.png","","c"],"d91742922818":["QUERO MELHORAR A DIABETES","#oferta","",""],"f736bdc2d05":["COMPRA 100% SEGURA","1\/2209221710560.png","","c"],"435e651a441":["D\u00daVIDAS SOBRE COMPRAR PELA INTERNET?","","",""],"435e651a442":["Comprar o INSUGLICO \u00e9 f\u00e1cil, pratico e totalmente seguro.","","",""],"435e651a44a1":["ENTREGA GARANTIDA NO PRAZO","1\/2209222015001.png","","c"],"435e651a44b1":["ENTREGA GARANTIDA NO PRAZO","","",""],"435e651a44a2":["DADOS PESSOAIS N\u00c3O S\u00c3O COMPARTILHADOS","1\/2209222015002.png","","c"],"435e651a44b2":["DADOS PESSOAIS N\u00c3O S\u00c3O COMPARTILHADOS","","",""],"435e651a44a3":["DADOS FINANCEIROS N\u00c3O S\u00c3O COMPARTILHADOS","1\/2209222015003.png","","c"],"435e651a44b3":["DADOS FINANCEIROS N\u00c3O S\u00c3O COMPARTILHADOS","","",""],"435e651a44a4":["SITE 100% SEGURO E CONFI\u00c1VEL","1\/2209222015000.png","","c"],"435e651a44b4":["SITE 100% SEGURO E CONFI\u00c1VEL","","",""],"9efc8f9b8c6":["ATENDIMENTO VIA WHATSAPP","","",""],"9efc8f9b8c5":["whatsapp","0\/2209222053180.svg","","d"],"54efbf8d9b6":["SITE 100% SEGURO","1\/2209222114372.png","","c"],"54efbf8d9b5":["FORMAS DE PAGAMENTO","1\/2209222114371.png","","c"],"54efbf8d9b0":["INSUGLICO","1\/2209222114370.png","","c"],"09fc09669a1":["Por Bernardo Galv\u00e3o - Atualizado em 13 de Abril 15:11h","","",""],"09fc09669a2":["Ex-apresentador GLOBAL \u00e9 assunto de blogs e perfis nas redes sociais em todo o Brasil, ap\u00f3s revelar como foi salvo da \u201cdiabetes\u201d.","","",""],"09fc09669a3":["<p>Atrav&eacute;s de pesquisas e indica&ccedil;&otilde;es de amigos ele encontrou<strong>&nbsp;Um Composto Eficaz<\/strong>&nbsp;que &eacute; Capaz de&nbsp;<strong>Restaurar o Sistema Insul&iacute;nico<\/strong>&nbsp;de Forma R&aacute;pida e Segura, Eliminando a Necessidade de Aplicar Insulina, Metformina ou Glifage.<\/p>","","",""],"09fc09669a4":["Fausto Silva no programa com seu filho relatando momentos dif\u00edceis que viveu.","1\/2209231551360.jpg","","b"],"09fc09669a5":["Fausto Silva no programa com seu filho relatando momentos dif\u00edceis que viveu.","","",""],"09fc09669a6":["<p class=\"dep\">\"Nunca imaginei que uma coisa dessas pudesse acontecer comigo, s&oacute; que quando eu me vi naquela situa&ccedil;&atilde;o j&aacute; n&atilde;o podia voltar atr&aacute;s, fiquei entre a cruz e a espada\"<\/p>\r\n<p class=\"dep\">\"Tive que optar por procedimento cir&uacute;rgico, invasivo com alto grau de perigo, pois, seria feito &agrave;s pressas. Eu achei que ali poderia ser o meu fim. - F. Silva falou.\"<\/p>\r\n<p>O procedimento para tratamento da obesidade e diabetes que o ex-apresentador Fausto Silva se submeteu, prometia manter o diabetes sob controle.<\/p>\r\n<p>Esse procedimento &eacute; motivo de debates e&nbsp;<strong>controv&eacute;rsias entre os profissionais da Sociedade Brasileira de Cirurgia Bari&aacute;trica e Metab&oacute;lica (SBCBM)<\/strong>&nbsp;at&eacute; hoje, que executaram o mesmo procedimento na irm&atilde; de Fausto Silva, que afirmou que a t&eacute;cnica &eacute;&nbsp;<strong>&ldquo;experimental&rdquo;<\/strong>&nbsp;e questionaram a aplica&ccedil;&atilde;o antes de mais pesquisas.<\/p>\r\n<p>A cirurgia &eacute; de grande risco pois, a passagem da comida em processo de digest&atilde;o pelo &iacute;leo estimula a produ&ccedil;&atilde;o de insulina, o horm&ocirc;nio que controla a taxa de a&ccedil;&uacute;car no sangue. S&oacute; que o &iacute;leo fica ao final do intestino delgado.<\/p>\r\n<p>O que eles fizeram foi retirar esse &oacute;rg&atilde;o e recoloc&aacute;-lo pr&oacute;ximo do est&ocirc;mago. Teoricamente, reduzindo os sintomas do diabetes, pois aumenta a produ&ccedil;&atilde;o do horm&ocirc;nio.<\/p>","","",""],"09fc09669a7":["Procedimento cir\u00fargico delicado.","1\/2209231552390.png","","b"],"09fc09669a8":["Procedimento cir\u00fargico delicado.","","",""],"09fc09669a9":["<p><span class=\"efeito background\">S&oacute; que mesmo sabendo que esse procedimento era&nbsp;<strong>experimental<\/strong>, os m&eacute;dicos submeteram o ex-apresentador&nbsp;<strong>ao risco<\/strong>&nbsp;e foi isso que deixou os familiares e amigos apavorados.<\/span><\/p>\r\n<p>Durante o procedimento, Fausto Silva ficou entubado, correndo s&eacute;rios riscos de contrair uma trombose ou ter algum tipo de infec&ccedil;&atilde;o generalizada que poderia lev&aacute;-lo &agrave; morte rapidamente.<\/p>\r\n<p>Para se ter uma dimens&atilde;o do ocorrido, o apresentador Fausto Silva nunca tinha deixado de realizar um programa antes, nem mesmo com a morte de seu pai, s&oacute; que dessa vez, ele preciso ficar de repouso completo.<\/p>\r\n<p><strong>No hospital seus familiares oravam por sua vida&hellip;<\/strong><\/p>\r\n<p class=\"dep\">&ldquo;Pensei que nunca mais estaria com meu pai de novo&rdquo;. Falou Jo&atilde;o Guilherme, filho do apresentador.<\/p>\r\n<h3>88% dos diab&eacute;ticos precisam de aux&iacute;lio para manter o n&iacute;vel de glicose baixo.<\/h3>\r\n<p>A sociedade Brasileira de Diabetes (SBD) informa,&nbsp;<strong>que 88% dos portadores de diabetes melittus n&atilde;o conseguem manter a glicose em n&iacute;veis seguros,<\/strong>&nbsp;e os que conseguem acabam geralmente seguem uma restri&ccedil;&atilde;o alimentar muito severa.<\/p>\r\n<p>Como por exemplo ter que&nbsp;<strong>comer somente alimentos insossos<\/strong>&nbsp;e&nbsp;<strong>deixar de consumir todo tipo de bebidas<\/strong>&nbsp;que n&atilde;o sejam ado&ccedil;adas com ado&ccedil;ante, para evitar assim a hipoglicemia.<\/p>\r\n<p>Que ocorre devidamente pelo p&acirc;ncreas, que deixa de produzir insulina em quantidade suficiente para processar o a&ccedil;&uacute;car presente no corpo.<\/p>","","",""],"09fc09669a10":["Insulina deixa de ser produzida pelo p\u00e2ncreas e o paciente precisa receber insulina injet\u00e1vel.","1\/2209231557070.jpg","","b"],"09fc09669a11":["Insulina deixa de ser produzida pelo p\u00e2ncreas e o paciente precisa receber insulina injet\u00e1vel.","","",""],"09fc09669a12":["<h3>Mas a verdade &eacute; que, se voc&ecirc; n&atilde;o fizer nada de diferente, o problema pode piorar.<\/h3>\r\n<p><strong>A glicemia alta pode ser fatal,<\/strong>&nbsp;principalmente por suas complica&ccedil;&otilde;es renais, neuropatia diab&eacute;tica (les&atilde;o do nervos) e tamb&eacute;m por infartos silenciosos.<\/p>\r\n<p>A cada dia que se passa sem o total controle da doen&ccedil;a,&nbsp;<span class=\"efeito background\">n&atilde;o s&oacute; aumenta os sintomas, mas tamb&eacute;m abre espa&ccedil;o para&nbsp;<strong>novos problemas como o (COVID-19)<\/strong>&nbsp;que aumenta seu risco de morte em at&eacute; 85%.<\/span><\/p>\r\n<p><strong>&Eacute; quase um caminho sem volta!<\/strong><\/p>","","",""],"09fc09669a13":["Diabetes uma doen\u00e7a silenciosa que atinge milh\u00f5es de brasileiros...","1\/2209231559040.jpg","","b"],"09fc09669a15":["<h3>Enquanto muitos sofrem outros n&atilde;o se d&atilde;o por satisfeito com essa situa&ccedil;&atilde;o...<\/h3>\r\n<p><span class=\"efeito background\"><strong>Depois desse tremendo susto, o apresentador nos informou que decidiu procurar por tratamentos mais convencionais e menos invasivos para tratar de sua sa&uacute;de, s&oacute; que os que estavam dispon&iacute;veis no mercado eram complicados&hellip;<\/strong><\/span><\/p>\r\n<p>Todos eles eram&nbsp;<strong>extremamente restritivos<\/strong>, pois, ele deixaria de comer tudo que estava habituado a&nbsp;<strong>comer e que gostava<\/strong>, al&eacute;m de praticar exerc&iacute;cios f&iacute;sicos durante a maior parte do tempo e tudo isso para o resto de sua vida.<\/p>\r\n<p>Essa condi&ccedil;&atilde;o de tratamento o deixava muito desconfort&aacute;vel at&eacute; porque o apresentador tinha dificuldade de executar os exerc&iacute;cios. Mas, pensando na sua condi&ccedil;&atilde;o de sa&uacute;de e qualidade de vida, viu que n&atilde;o tinha tempo a perder, come&ccedil;ou a executar alguns tratamentos que conseguia e quanto mais ele procurava por&nbsp;<strong>tratamentos alternativos<\/strong>, mais ele ia conhecendo sobre novas t&eacute;cnicas ainda pouco faladas e foi em um dessas pesquisas que ele se aprofundou, procurou na internet e descobriu que outros&nbsp;<strong>portadores da doen&ccedil;a e tamb&eacute;m famosos famosos como o Jos&eacute; Loreto, Paula Toller, Andr&eacute; Marques, Babu e Ana Carolina<\/strong>&nbsp;estavam tendo benef&iacute;cios surpreendentes com esses novos compostos no seu tratamento.<\/p>","","",""],"09fc09669a14":["Diabetes uma doen\u00e7a silenciosa que atinge milh\u00f5es de brasileiros...","","",""],"09fc09669a16":["Fausto Silva antes do tratamento.","1\/2209231619440.jpg","","b"],"09fc09669a17":["Fausto Silva antes do tratamento.","","",""],"09fc09669a18":["<h3>E foi ai que...<\/h3>\r\n<p>Descobrindo esse novo tratamento que consiste num extrato de a&ccedil;&atilde;o&nbsp;<strong>BIOFUNCIONAL<\/strong>&nbsp;desenvolvido por pesquisadores suecos em parceria com a Unicamp, onde foi demonstrado que o extrato tem a capacidade de&nbsp;<strong>restaurar todo o SISTEMA INSUL&Iacute;NICO do organismo<\/strong>, atrav&eacute;s da f&oacute;rmula o portador da diabetes ter&aacute; o suprimento di&aacute;rio necess&aacute;rio para controle da glicemia&nbsp;<strong>de forma totalmente natural e sem contraindica&ccedil;&otilde;es<\/strong>, dando melhor qualidade de vida e maiores possibilidades para essas pessoas.<\/p>\r\n<p><span class=\"efeito background\"><strong>Esse tratamento inovador e muito mais acess&iacute;vel gerou uma nova esperan&ccedil;a para grande parte da popula&ccedil;&atilde;o Brasileira que sofre com a diabetes.<\/strong><\/span><\/p>","","",""],"09fc09669a19":["A preocupa\u00e7\u00e3o era constante com as taxas altas da sua Glicose.","1\/2209231620550.jpg","","b"],"09fc09669a20":["<h3>Essa f&oacute;rmula &eacute; tudo isso? Veja voc&ecirc; mesmo!<\/h3>\r\n<p>Pois bem, essa incr&iacute;vel f&oacute;rmula repercutiu de maneira t&atilde;o positiva e r&aacute;pida na sociedade Brasileira, que ao saber deste novo tratamento, Fausto Silva conta que ficou tentado em testar o produto.<\/p>\r\n<p class=\"dep\">\"Comecei a perceber resultados logo no primeiro uso. Ele me deu uma sensa&ccedil;&atilde;o de alivio imediato no corpo, deixou muito mais leve, acabou com um cansa&ccedil;o que sentia. Eu usei de manh&atilde; e &aacute; noite.\"<\/p>\r\n<p class=\"dep\">\"Eu n&atilde;o podia acreditar que passei por tudo aquilo, tendo esse produto maravilho dispon&iacute;vel. Minha glicose estava marcando 96, voltou normalidade de antes da diabetes, sem nenhuma risco ou dor.\"<\/p>","","",""],"09fc09669a21":["<h3>Recursos paliativos e seus perigos<\/h3>\r\n<p>Assim como Fausto e sua irm&atilde;, a maioria das pessoas acreditavam que o &uacute;nica forma de eliminar os sintomas causados pela diabetes seria atrav&eacute;s de cirurgias invasivas ou suprimentos de inje&ccedil;&otilde;es e medicamentos.<\/p>\r\n<p><span class=\"efeito background\"><strong>Esses m&eacute;todos tem efetividade para v&aacute;rias pessoas, mas, trazem tamb&eacute;m riscos para a sa&uacute;de, s&atilde;o dolorosos, deixam cicatrizes e s&atilde;o extremamente onerosos.<\/strong><\/span><\/p>\r\n<p>Mas, depois da boa noticia, quando uma equipe de bioqu&iacute;micos da Unicamp-SP,&nbsp;<strong>liderada sueco, Dr. Gustav Olsson, end&oacute;crino e cientista m&eacute;dico,<\/strong>&nbsp;conseguiu unir em uma f&oacute;rmula biofuncional, os&nbsp;<strong>principais ativos que reconstroem o funcionamento do p&acirc;ncreas e no metabolismo insul&iacute;nico,<\/strong>&nbsp;reduzindo em torno de 86% os sintomas da Diabetes.<\/p>","","",""],"09fc09669a22":["Diretamente da Su\u00e9cia o Dr. Gustav Olsson m\u00e9dico end\u00f3crino e cientista.","1\/2209231621430.png","","b"],"09fc09669a23":["Diretamente da Su\u00e9cia o Dr. Gustav Olsson m\u00e9dico end\u00f3crino e cientista.","","",""],"09fc09669a24":["<p>O&nbsp;<strong>sucesso desta f&oacute;rmula<\/strong>&nbsp;que combina os melhores ativos em extrato l&iacute;quido, que&nbsp;<strong>atrav&eacute;s de uma aplica&ccedil;&atilde;o sublingual, consegue trazer al&iacute;vio quase que imediato pra o seu organismo<\/strong>, PENETRANDO nos vasos sanguin&eacute;os atrav&eacute;s da l&iacute;ngua e reduzindo os n&iacute;veis de a&ccedil;&uacute;car no sangue instantaneamente, dando condi&ccedil;&otilde;es de normalizar todo o&nbsp;<strong>SISTEMA INSUL&Iacute;NICO<\/strong>.<\/p>\r\n<h3>Mas, que f&oacute;rmula &eacute; essa?<\/h3>\r\n<p><strong>Esses s&atilde;o os principais ingredientes da f&oacute;rmula:<\/strong><\/p>\r\n<p><strong>Persea Americana:<\/strong>&nbsp;diversas estudos e pesquisas apontam o uso deste extrato como uma das melhores descobertas dos &uacute;ltimos anos para a medicina, o mesmo tem propriedades anti inflamat&oacute;rias e de preven&ccedil;&atilde;o da diabetes e colesterol alto, al&eacute;m de, beta sitosterol, &ocirc;mega 9, vitaminas A, D, E, K, &aacute;cido f&oacute;lico e pot&aacute;ssio.<\/p>\r\n<p><strong>Coenzima Q10:<\/strong>&nbsp;&eacute; um potente antioxidante que promove o combate de radicais livres e &eacute; considerado indispens&aacute;vel na abordagem contra a diabetes mellitus.<\/p>\r\n<p><strong>Resveratrol:<\/strong>&nbsp;a maior descoberta dos &uacute;ltimos anos, melhora significativamente o controle da glicemia e a sensibilidade &agrave; insulina em indiv&iacute;duos com diabetes, mas n&atilde;o afeta as medidas de glicemia em indiv&iacute;duos n&atilde;o diab&eacute;ticos, os estudos podem ser conferidos na PubMed, Embase, MEDLINE, e Biblioteca Cochrane.<\/p>\r\n<p><strong>Astaxantina:<\/strong>&nbsp;os efeitos da astaxantina s&atilde;o observados pela diminui&ccedil;&atilde;o na apolipoprote&iacute;na-E (marcador da doen&ccedil;a de alzheimer) e na MDA-LDL (colesterol ruim), confirmando que a astaxantina pode ter efeitos protetores contra a aterosclerose em pacientes pr&eacute;-diab&eacute;ticos e diab&eacute;ticos.<\/p>","","",""],"09fc09669a25":["A f\u00f3rmula oferece um controle imediato do a\u00e7\u00facar no sangue para homens e mulheres.","1\/2209282226523.png","","a"],"09fc09669a26":["A f\u00f3rmula oferece um controle imediato do a\u00e7\u00facar no sangue para homens e mulheres.","","",""],"09fc09669a27":["<p>Esses componentes agem diretamente na corrente sangu&iacute;nea, reconstruindo todo o sistema insul&iacute;nico&nbsp;<strong>agindo de forma imediata no al&iacute;vio dos sintomas da diabetes.<\/strong>&nbsp;Apesar de ser um produto novo no Brasil, o&nbsp;<a href=\"..\/\">InsuGlico<\/a>&nbsp;j&aacute; vem sendo usado em toda a Europa H&aacute; mais de 4 anos.<\/p>\r\n<p>J&aacute; imaginou voc&ecirc; poder voltar a comer e beber o que desejar e como desejar? Ter uma vida leve e sem restri&ccedil;&otilde;es de hor&aacute;rios, sem necessidade de automutila&ccedil;&atilde;o com agulhas e furadas?<\/p>","","",""],"09fc09669a28":["F\u00f3rmula totalmente natural e sem contraindica\u00e7\u00f5es","1\/2209282226521.png","","a"],"09fc09669a29":["F\u00f3rmula totalmente natural e sem contraindica\u00e7\u00f5es","","",""],"09fc09669a30":["<h3>Essa f&oacute;rmula &eacute; tudo isso? Veja voc&ecirc; mesmo!<\/h3>\r\n<p>Pois bem, essa incr&iacute;vel f&oacute;rmula repercutiu de maneira t&atilde;o positiva e r&aacute;pida na sociedade Brasileira, que ao saber deste novo tratamento, Fausto Silva conta que ficou tentado em testar o produto.<\/p>\r\n<p class=\"dep\">\"Comecei a perceber resultados logo no primeiro uso. Ele me deu uma sensa&ccedil;&atilde;o de alivio imediato no corpo, deixou muito mais leve, acabou com um cansa&ccedil;o que sentia. Eu usei de manh&atilde; e &aacute; noite.\"<\/p>\r\n<p class=\"dep\">\"Eu n&atilde;o podia acreditar que passei por tudo aquilo, tendo esse produto maravilho dispon&iacute;vel. Minha glicose estava marcando 96, voltou normalidade de antes da diabetes, sem nenhuma risco ou dor.\"<\/p>","","",""],"09fc09669a31":["Resultado do teste","1\/2209282226522.png","","a"],"09fc09669a32":["Resultado do teste","","",""],"09fc09669a33":["<p class=\"dep\">\"Eu fiquei extremamente impressionado. O efeito &eacute; incr&iacute;vel! Hoje posso comer de tudo, e n&atilde;o estou mais no grupo de risco do COVID-19. Inclusive at&eacute; passei por uma infec&ccedil;&atilde;o, mas, foi assintom&aacute;tico.\"<\/p>\r\n<p>- Comenta Fausto Silva<\/p>\r\n<p>Seus n&iacute;veis de glicose que eram assustadoramente altos, perto da casa dos 350, ca&iacute;ram incrivelmente para abaixo de 99 e se manteve est&aacute;vel, sua press&atilde;o arterial normalmente ficava entre 14\/10, mudou para a t&atilde;o sonhada 12\/8.<\/p>\r\n<h3><strong>Agora voc&ecirc; est&aacute; se perguntando: \"Onde posso encontrar esse tratamento?&rdquo;<\/strong><\/h3>\r\n<p>Seu nome &eacute;&nbsp;<strong>INSUGLICO<\/strong>. Esse tratamento funciona como um&nbsp;<strong>ATIVO BIOFUNCIONAL<\/strong>, que penetra no p&acirc;ncreas e faz ele gerar mais insulina no corpo, al&eacute;m de, ajudar a queimar o carboidrato que se acumula para ser transformado em a&ccedil;&uacute;car no nosso sangue, restaurando todo o SISTEMA INSUL&Iacute;NICO e fazendo ele funcionar com perfei&ccedil;&atilde;o.<\/p>\r\n<p>Esse efeito restaurador do&nbsp;<strong>INSUGLICO<\/strong>&nbsp;&eacute; nosso maior diferencial em rela&ccedil;&atilde;o aos demais produtos oferecidos no tratamento da diabetes, pois, ele al&eacute;m de&nbsp;<strong>restaurar todo o sistema glic&ecirc;mico e insul&iacute;nico<\/strong>, haje tamb&eacute;m no combate ao estresse oxidativo causado no corpo promovendo muito mais sa&uacute;de e bem-estar para as pessoas que o consomem e tudo sem contraindica&ccedil;&otilde;es e efeitos colaterais.<\/p>\r\n<p><strong>O InsuGlico re&uacute;ne a f&oacute;rmula mais poderosa atualmente<\/strong>&nbsp;no controle a Diabetes, pois, reduz o risco de doen&ccedil;as cardiovasculares, aumenta a imunidade,&nbsp;<strong>auxilia na queima de gordura e reduz a taxa glic&ecirc;mica de forma imediata.<\/strong><\/p>\r\n<p>Se voc&ecirc; tem mais de 30, 40, 50 anos ou mais, &eacute; diab&eacute;tico ou pr&eacute;-diab&eacute;tico com hist&oacute;rico familiar e deseja tratar ou prevenir os sintomas relacionados a Diabetes tipo I e II, ent&atilde;o voc&ecirc; precisa do tratamento natural InsuGlico.<\/p>\r\n<p><strong>Essa pode ser realmente a sua chance de mudan&ccedil;a!<\/strong><\/p>\r\n<p><a class=\"bt\" href=\"..\/advs\/\">FA&Ccedil;A SEU PEDIDO AGORA<\/a><\/p>\r\n<h3>Resultados reais de pessoas reais<\/h3>","","",""],"09fc09669a34":["coment\u00e1rio walter","1\/2209231646360.jpg","","b"],"09fc09669a35":["coment\u00e1rio nelson","1\/2209231646361.jpg","","b"],"09fc09669a37":["<p>Dificilmente recomendamos algum produto no nosso site ou na revista, mas com as evid&ecirc;ncias de que esse produto realmente funciona e a satisfa&ccedil;&atilde;o garantida, sentimos que nossos leitores iriam gostar da dica.<\/p>\r\n<p>Al&eacute;m disso, a empresa respons&aacute;vel pela venda do&nbsp;<a href=\"..\/\">InsuGlico<\/a>&nbsp;no Brasil confia tanto no seu produto, que oferece uma garantia de 100% de satisfa&ccedil;&atilde;o.<\/p>\r\n<p class=\"block\"><strong>Importante:&nbsp;Segundo o fabricante,&nbsp;<a href=\"..\/\">InsuGlico<\/a>&nbsp;s&oacute; esta disponivel para compra atrav&eacute;s do&nbsp;<a href=\"..\/\">site oficial<\/a>&nbsp;e n&atilde;o &eacute; vendido em farm&aacute;cias. De acordo com a empresa, isso &eacute; porque a demanda pelo produto est&aacute; t&atilde;o alta, que o pouco estoque que eles t&ecirc;m &eacute; vendido em poucas horas atrav&eacute;s do site.<\/strong><\/p>\r\n<h3>Garantia<\/h3>\r\n<p>Al&eacute;m disso, o&nbsp;<a href=\"..\/\">InsuGlico<\/a>&nbsp;confia tanto no seu produto, que oferece uma&nbsp;<strong>garantia de 100%<\/strong>&nbsp;de satisfa&ccedil;&atilde;o, ou seja, o cliente pode testar o produto por 30 dias e se n&atilde;o gostar, basta entrar em contato com a empresa por e-mail ou Whatsapp e solicitar a devolu&ccedil;&atilde;o integral do dinheiro pago.&nbsp;<strong>Risco zero para o consumidor.<\/strong><\/p>","","",""],"09fc09669a38":["<p><strong>Aproveite somente hoje desconto de at&eacute;&nbsp;<span style=\"color: rgb(229, 0, 0);\">70% + Frete Gr&aacute;tis<\/span>&nbsp;a partir de agora!<\/strong><\/p>","","",""],"09fc09669a39":["<p>O nosso portal&nbsp;<strong>reservou alguns frascos de&nbsp;<a href=\"..\/\">InsuGlico<\/a>&nbsp;para nossos leitores.<\/strong>&nbsp;Voc&ecirc; ganha at&eacute;&nbsp;<strong>70% de desconto + Frete Gr&aacute;tis<\/strong>&nbsp;e pode parcelar em at&eacute; 12x.<\/p>","","",""],"09fc09669a40":["<p>Aten&ccedil;&atilde;o essa&nbsp;<strong>promo&ccedil;&atilde;o &eacute; de lan&ccedil;amento, v&aacute;lida apenas enquanto durar o estoque.<\/strong>&nbsp;Tenha vantagem com nosso link exclusivo e ganha at&eacute;&nbsp;<span style=\"color: rgb(229, 0, 0);\"><strong>70% desconto e parcelamento em at&eacute; 12x<\/strong><\/span>&nbsp;clicando no link abaixo:<\/p>","","",""],"09fc09669a41":["INSUGLICO","1\/2209282251300.png","","b"],"09fc09669a42":["EXPERIMENTE HOJE MESMO","..\/","",""],"09fc09669ab1":["Dion\u00edsio Cavalcade","","",""],"09fc09669ac1":["Sou portador do diabetes tipo 2 e tomo metformina XR 500 todo dia. Quero muito comprar esse produto como fa\u00e7o?","","",""],"09fc09669ab2":["Eriberto Fernandez","","",""],"09fc09669ac2":["Minha glicose sempre alta, tomava insulina todos os dias, com InsuGlico consegui reduzir o uso de insulina e hoje gra\u00e7as a Deus n\u00e3o fa\u00e7o mais uso. InsuGlico melhorou muito minha vida, glicose alta nunca mais!!!","","",""],"09fc09669ab3":["Claudia Fonseca","","",""],"09fc09669ac3":["Minha m\u00e3e tem Diabetes, ela toma insulina de manh\u00e3 e de noite, vejo o sofrimento dela e quero ajudar ela a sair dessa vida triste, comprei esse produto tem poucos dias mas ela j\u00e1 tomou por 1 semana e sua Glicose reduziu bem de 450 para 197 sem uso de insulina, nossa esperan\u00e7a aumentou muito!.","","",""],"09fc09669ab4":["Ant\u00f4nia de Vasconcelos","","",""],"09fc09669ac4":["Tenho diabetes tipo 2, eu tomava 3 tipos de rem\u00e9dio todos os dias, mesmo assim sempre estava alta, conheci InsuGlico pela internet e resolvi ariscar, comprei 3 potes e comecei a tomar, tem pouco mais de 2 meses e minha vida mudou muito, cortei todos os medicamentos, emagreci 5kg e minha glicose ficou controlada de forma natural.","","",""],"09fc09669ab5":["Jos\u00e9 Carlos Vieira","","",""],"09fc09669ac5":["Tenho diabetes e n\u00e3o consigo controlar minha glicose com rem\u00e9dios, insulina j\u00e1 n\u00e3o aguento mais de tanta dor, comprei InsuGlico e n\u00e3o vejo a hora de come\u00e7ar a tomar.","","",""],"09fc09669aa1":["Cla\u00fadio Monteiro","1\/2209231704260.png","","c"],"09fc09669aa2":["Sebasti\u00e3o Zanoni","1\/2209231704261.png","","c"],"09fc09669aa3":["C\u00e9lia Fernandes","1\/2209251527240.jpg","","c"],"09fc09669aa4":["Cida Rezende","1\/2209231704263.png","","c"],"09fc09669aa5":["Augusto Ferreira","1\/2209231704262.png","","c"],"09fc09669a49":["EXPERIMENTE HOJE MESMO","..\/","",""],"09fc09669a44":["Diabetes e depress\u00e3o podem estar entre as consequ\u00eancias da Covid.","","",""],"09fc09669a43":["covid","1\/2209231719020.jpg","","c"],"09fc09669a46":["Aprenda como fazer um lanche saud\u00e1vel que ajuda a combater Diabetes.","","",""],"09fc09669a45":["Aprenda essa receita","1\/2209231719320.png","","c"],"09fc09669a47":["Promo\u00e7\u00e3o Tempor\u00e1ria","","",""],"09fc09669a48":["INSUGLICO DESCONTO 70%","1\/2209282257240.png","","a"],"45c6e959e41":["INSUGLICO","1\/2209260440550.png","","c"],"45c6e959e43":["AVISO LEGAL",".\/aviso-legal","",""],"45c6e959e44":["RASTREAR PEDIDO","https:\/\/pedidozz.com\/","",""],"45c6e959e45":["POL\u00cdTICAS DE PRIVACIDADE",".\/politica-de-privacidade","",""],"45c6e959e46":["TERMOS E CONDI\u00c7\u00d5ES",".\/termos-de-uso","",""],"45c6e959e42":["LINKS \u00daTEIS","","",""],"45c6e959e47":["FORMAS DE PAGAMENTO","","",""],"45c6e959e49":["METODOS DE ENVIO","","",""],"45c6e959e48":["FORMAS DE PAGAMENTO","1\/2209222114371.png","","c"],"45c6e959e410":["METODOS DE ENVIO","1\/2209272211210.png","","c"],"7e3a90793014":["<div id=\"vid_633380e575d3ff0008223307\" style=\"position:relative;width:100%;padding: 56.25% 0 0;\"><img id=\"thumb_633380e575d3ff0008223307\" src=\"https:\/\/images.converteai.net\/7ccc1362-2860-4371-917c-92ecfbec948a\/players\/633380e575d3ff0008223307\/thumbnail.jpg\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;\"><div id=\"backdrop_633380e575d3ff0008223307\" style=\"position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);\"><\/div><\/div><script type=\"text\/javascript\" id=\"scr_633380e575d3ff0008223307\">var s=document.createElement(\"script\");s.src=\"https:\/\/scripts.converteai.net\/7ccc1362-2860-4371-917c-92ecfbec948a\/players\/633380e575d3ff0008223307\/player.js\",s.async=!0,document.head.appendChild(s);<\/script>","","",""],"7c9b64ff1d3":["COMPRA 100% SEGURA","1\/2209221710560.png","","c"],"7c9b64ff1da1":["INSUGLICO - modo correto de usar","1\/2209281933370.png","","b"],"7c9b64ff1da2":["INSUGLICO - n\u00e3o usar com outros produtos","1\/2209281941450.jpg","","b"],"7c9b64ff1da3":["INSUGLICO - tomar apenas uma vez ao dia","1\/2209281944260.jpg","","b"],"7c9b64ff1db1":["Coloque 1ml (12 gotas) do produto diretamente na sua boca, copo com \u00e1gua ou bebida de sua prefer\u00eancia (tem o sabor suave de abacate)","","",""],"7c9b64ff1db2":["N\u00e3o ingerir com bebidas quentes ou geladas, para maior efic\u00e1cia do produto","","",""],"7c9b64ff1db3":["Tome apenas uma vez por dia e voc\u00ea ter\u00e1 o resultado esperado","","",""],"7c9b64ff1d1":["QUAL O MODO DE USO?","","",""],"7c9b64ff1d2":["QUERO MELHORAR A DIABETES","#oferta","",""]}];
+	const ED = {"header edx":""};
+</script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=5.">
+<link rel="icon" href="https://insuglico.com.br/app/img/fav.png">
+<title>Insuglico - Oficial</title>
+<meta name="description" content="InsuGlico é o único tratamento com a nova tecnologia desenvolvida na região com a menor população de Diabéticos no mundo.">
+<meta itemprop="url" content="https://insuglico.com.br">
+<link rel="canonical" href="https://insuglico.com.br">
+<meta itemprop="image" content="https://insuglico.com.br/app/img/capa.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://insuglico.com.br">
+<meta property="og:title" content="Insuglico - Oficial">
+<meta property="og:description" content="InsuGlico é o único tratamento com a nova tecnologia desenvolvida na região com a menor população de Diabéticos no mundo.">
+<meta property="og:image" content="https://insuglico.com.br/app/img/capa.png">
+<meta property="og:site_name" content="Insuglico - Oficial">
+<meta property="og:locale" content="pt_BR">	
+<meta name="author" content="Randiclecio Moura">
+<meta name="robots" content="index, follow">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://insuglico.com.br/src/style.css?v220928204423" type="text/css" media="all"/>
+</head>
+
+<body>
+	<!-- Conteúdo geral !-->
+	<main class="main" id="main">	
+	<!-- Header !-->
+<header class="header" id="header">
+	<!-- Tarja !-->
+	<section class="tarja-header" id="tarja-header">
+		<div class="container">
+			<div class="row">
+				<img src="https://insuglico.com.br/files/c/2209260440550.webp" alt="INSUGLICO" width="500" height="500">
+			</div>
+		</div>
+	</section>
+	<!-- Tarja !-->
+
+	<!-- Principal !-->
+	<section class="principal" id="principal">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h1 ><p class="elementor-heading-title elementor-size-default"><span style="color: rgb(0, 87, 123);">ACABE COM OS SINTOMAS DA <span style="color: rgb(0, 152, 218);">DIABETES EM POUCAS HORAS.</span></span></p></h1>
+					<h2 >Novo produto desenvolvido por pesquisadores da Suécia que restaura o SISTEMA INSULÍNICO agora disponível no Brasil!</h2>
+				</div>				
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-6 col-lg-6 col-sm-6 list">
+					<h3 ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" /></svg>Coma sem restrições</h3>
+					<h3 ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" /></svg>Aumente a Imunidade</h3>
+					<h3 ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" /></svg>Acabe com a Fadiga</h3>
+					<h3 ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" /></svg>Controle o Fluxo Urinário</h3>
+					<h3 ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" /></svg>Sem embaçamento na visão</h3>
+					<h3 ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" /></svg>Cicatrização Normalizada</h3>
+					<h3 ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" /></svg>Sem enjoos</h3>
+					<h3 ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" /></svg>Acabe Com os Formigamentos</h3>
+				</div>
+				<!-- <div class="col-md-6 col-lg-6 col-sm-6 image">
+					<img  class="frascos-sementes-principal img-fluid">
+				</div> -->
+				<div class="col-md-6 col-lg-6 col-sm-6 video" ><div id="vid_633380e575d3ff0008223307" style="position:relative;width:100%;padding: 56.25% 0 0;"><img id="thumb_633380e575d3ff0008223307" src="https://images.converteai.net/7ccc1362-2860-4371-917c-92ecfbec948a/players/633380e575d3ff0008223307/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_633380e575d3ff0008223307" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_633380e575d3ff0008223307">var s=document.createElement("script");s.src="https://scripts.converteai.net/7ccc1362-2860-4371-917c-92ecfbec948a/players/633380e575d3ff0008223307/player.js",s.async=!0,document.head.appendChild(s);</script></div>
+			</div>
+			<div class="row">
+				<div class="link">
+					<a class="cta cta-principal pulsar" href="#beneficios"> QUERO MEU INSUGLICO</a>
+					<img src="https://insuglico.com.br/files/c/2209221710560.webp" alt="COMPRA 100% SEGURA" width="500" height="500" class="icta">				
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Principal !-->
+</header>
+<!-- Header !-->
+<!-- Benefícios !-->
+<section class="beneficios" id="beneficios">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12">
+				<figure><img src="https://insuglico.com.br/files/b/2209271819400.webp" alt="INSULGLICO" width="750" height="750" class="banner"></figure>
+				<h3 >O INSUGLICO é indicado para quem tem doenças como diabetes, cardiovasculares, insuficiência cardíaca, que já teve infarto, que tem históricos de infarto na família, pessoas com colesterol elevado, fumantes.</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-lg-4 col-sm-4">
+				<div class="beneficio-item">
+					<img src="https://insuglico.com.br/files/c/2209221658595.webp" alt="ESTABILIZA A GLICOSE" width="500" height="500" class="beneficio-icon img-fluid">
+					<h4 >ESTABILIZA A GLICOSE</h4>
+					<p >Fórmula sueca com óleo de Semente de Persea sendo seus principais componentes a lecitina, o beta-sitosterol, ômega 9 e as vitaminas A, D, E e K, além de ácido fólico e potássio. Esse conjunto faz do Óleo de de Semente de Persea um poderoso estabilizador dos níveis de açúcar.</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4 col-sm-4">
+				<div class="beneficio-item">
+					<img src="https://insuglico.com.br/files/c/2209221658594.webp" alt="CONTROLA O AÇÚCAR NO SANGUE" width="500" height="500" class="beneficio-icon img-fluid">
+					<h4 >CONTROLA O AÇÚCAR NO SANGUE</h4>
+					<p >Contendo também uma ultra concentração de Coenzima Q10 que assim ajuda a diminuir os picos de insulina.</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4 col-sm-4">
+				<div class="beneficio-item">
+					<img src="https://insuglico.com.br/files/c/2209221658593.webp" alt="CÉREBRO ANTI-ALZHEIMER" width="500" height="500" class="beneficio-icon img-fluid">
+					<h4 >CÉREBRO ANTI-ALZHEIMER</h4>
+					<p >Prevenir o Alzheimer é garantir que sua identidade, autonomia e independência fiquem preservadas durante toda sua vida.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-lg-4 col-sm-4">
+				<div class="beneficio-item">
+					<img src="https://insuglico.com.br/files/c/2209221658592.webp" alt="AUMENTA A ENERGIA E DISPOSIÇÃO" width="500" height="500" class="beneficio-icon img-fluid">
+					<h4 >AUMENTA A ENERGIA E DISPOSIÇÃO</h4>
+					<p >Aumente sua energia e disposição através de uma formula exclusiva e poderosa de InsuGlico na ajuda com a Diabetes.</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4 col-sm-4">
+				<div class="beneficio-item">
+					<img src="https://insuglico.com.br/files/c/2209221658591.webp" alt="ESTIMULA A PRODUÇÃO DE INSULINA" width="500" height="500" class="beneficio-icon img-fluid">
+					<h4 >ESTIMULA A PRODUÇÃO DE INSULINA</h4>
+					<p >A formula exclusiva de Insuglico estimula a produção de insulina no corpo, o que melhora a disposição e o bem estar do dia a dia.</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4 col-sm-4">
+				<div class="beneficio-item">
+					<img src="https://insuglico.com.br/files/c/2209221658590.webp" alt="CORAÇÃO ANTI-INFARTO" width="500" height="500" class="beneficio-icon img-fluid">
+					<h4 >CORAÇÃO ANTI-INFARTO</h4>
+					<p >O óleo de abacate previne doenças cardiovasculares devido ao seu alto teor de ácido oléico, uma gordura monoinsaturada que auxilia na redução do LDL-colesterol e aumento do HDL-colesterol.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="link">
+				<a class="cta cta-principal pulsar" href="#oferta">QUERO DISPOSIÇÃO E ENERGIA</a>
+				<img src="https://insuglico.com.br/files/c/2209221710560.webp" alt="COMPRA 100% SEGURA" width="500" height="500" class="icta">				
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Benefícios !--><section class="resultado" id="resultado">
+	<div class="container">
+		<div class="row">
+			<h2 >RECUPERE A FELICIDADE DE VIVER COM DIAS MAIS TRANQUILOS E SAUDÁVEIS</h2>
+			<h3 >VOCÊ TAMBÉM MERECE SER LIVRE DOS SINTOMAS DA DIABETES!</h3>			
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-lg-6 col-sm-6 image">
+				<img src="https://insuglico.com.br/files/b/2209221737590.webp" alt="APROVADO PELA ANVISA" width="750" height="750" class="frascos-sementes-resultado img-fluid">
+			</div>
+			<div class="col-md-6 col-lg-6 col-sm-6 list">
+				<h4 ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" /></svg>Pressão 12 por 8</h4>
+				<h4 ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" /></svg>Preserva sua memória</h4>
+				<h4 ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" /></svg>Barreira de Imunidade</h4>
+				<h4 ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" /></svg>Antioxidante Natural</h4>
+				<h4 ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" /></svg>Estimula a produção de insulina</h4>
+				<h4 ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" /></svg>Coração Anti-Infarto</h4>
+				<h4 ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" /></svg>Energia da Juventude</h4>
+				<h4 ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-all" viewBox="0 0 16 16"><path d="M8.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L2.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093L8.95 4.992a.252.252 0 0 1 .02-.022zm-.92 5.14.92.92a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 1 0-1.091-1.028L9.477 9.417l-.485-.486-.943 1.179z" /></svg>Cérebro Anti-Alzheimer</h4>
+			</div>
+		</div>
+	</div>
+</section><!-- Formula !-->
+<section class="formula" id="formula">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12">
+				<h2 >Qual segredo da nossa fórmula?</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<img src="https://insuglico.com.br/files/b/2209282226523.webp" alt="INSUGLICO" width="750" height="750" class="sublingual img-fluid">
+			</div>
+			<div class="col texto">
+				<p >A exclusiva tecnologia sueca feita do Óleo da Semente de Persea com aplicação sublingual proporciona uma absorção rápida e eficaz por meio da glândula que temos sob a língua, nela vasos que acessam diretamente a corrente sanguínea absorvem rapidamente seu conteúdo e promovem resultados surpreendentes em pouquíssimo tempo, essa é a forma mais eficaz, garantindo até 97% de absorção dos ativos da composição. Chegou o fim dos tratamentos invasivos, dolorosos e com resultado temporário!</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Formula !--><!-- Benefícios !-->
+<section class="beneficios" id="benefícios">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12">
+				<h2 >Desenvolvido e Recomendado por Especialistas!</h2>
+				<h3 >A fórmula do Insuglico contém uma exclusiva fórmula com tecnologia avançada e importada dos Estados Unidos para melhorar o dia a dia de diabéticos com uma ótima absorção no organismo, deixando seus dias com mais energia e disposição com o controle da diabetes.</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-lg-4 col-sm-4">
+				<div class="beneficio-item">
+					<img src="https://insuglico.com.br/files/c/2209221908125.webp" alt="Coenzima Q10" width="500" height="500" class="beneficio-icon img-fluid">
+					<h4 >Coenzima Q10</h4>
+					<p >A suplementação com Coenzima Q10 ajuda a aumentar a sensibilidade à insulina e melhora os níveis de açúcar no sangue. Indispensável para diminuir os picos de insulina.</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4 col-sm-4">
+				<div class="beneficio-item">
+					<img src="https://insuglico.com.br/files/c/2209221908124.webp" alt="Resveratrol Americano" width="500" height="500" class="beneficio-icon img-fluid">
+					<h4 >Resveratrol Americano</h4>
+					<p >A suplementação com resveratrol + tratamento hipoglicêmico convencional se mostra eficaz na melhora de fatores de risco cardiovasculares e do controle glicêmico em pacientes com diabetes. Assim o resveratrol pode ser utilizado como terapia adjuvante no manejo da diabetes.</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4 col-sm-4">
+				<div class="beneficio-item">
+					<img src="https://insuglico.com.br/files/c/2209221908123.webp" alt="Óleo da Semente de Persea" width="500" height="500" class="beneficio-icon img-fluid">
+					<h4 >Óleo da Semente de Persea</h4>
+					<p >O Óleo de Semente de Persea Americano "conhecido como óleo de abacate americano" tem como principais componentes a lecitina, o beta-sitosterol, ômega 9 e as vitaminas A, D, E e K, além de ácido fólico e potássio. auxilia na prevenção e controle de diversas doenças, como diabetes e colesterol alto.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-lg-4 col-sm-4">
+				<div class="beneficio-item">
+					<img src="https://insuglico.com.br/files/c/2209221908122.webp" alt="Astaxantina" width="500" height="500" class="beneficio-icon img-fluid">
+					<h4 >Astaxantina</h4>
+					<p >Astaxantina em Pacientes Diabéticos Melhora os Marcadores da Inflamação e do Estresse Oxidativo. A astaxantina é um caratenoide que pertence à classe das xantofilas e possui capacidade antioxidante e possível papel na redução do risco de algumas doenças.</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4 col-sm-4">
+				<div class="beneficio-item">
+					<img src="https://insuglico.com.br/files/c/2209221908121.webp" alt="Vitamina C" width="500" height="500" class="beneficio-icon img-fluid">
+					<h4 >Vitamina C</h4>
+					<p >“As propriedades antioxidantes da vitamina C podem ajudar a neutralizar os altos níveis de radicais livres encontrados em pessoas com Diabetes e é encorajador ver que isso beneficia várias co-morbidades comuns da doença, como a pressão alta .</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4 col-sm-4">
+				<div class="beneficio-item">
+					<img src="https://insuglico.com.br/files/c/2209221908120.webp" alt="Vitamina E" width="500" height="500" class="beneficio-icon img-fluid">
+					<h4 >Vitamina E</h4>
+					<p >Além disso, um estudo publicado no Journal of Clinical & Diagnostic Research descobriu que a suplementação de vitamina E ajuda a retardar o aparecimento das complicações do diabetes, bem como a evitar a progressão de suas complicações.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="link">
+				<a class="cta cta-principal pulsar" href="#oferta">QUERO MELHORAR A DIABETES</a>
+				<img src="https://insuglico.com.br/files/c/2209221710560.webp" alt="COMPRA 100% SEGURA" width="500" height="500" class="icta">				
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Benefícios !--><!-- Garantia !-->
+<section class="garantia" id="garantia">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h2 >100% SATISFEITO OU TRATAMENTO GRATUITO</h2>
+				<img src="https://insuglico.com.br/files/b/2209221921230.webp" alt="Garantia de 90 dias" width="750" height="750" class="selo-frascos img-fluid">
+				<p >Acreditamos tanto no poder da fórmula do INSUGLICO que garantimos sua satisfação! Se em 90 dias você não notar os benefícios ou não gostar do produto basta pedir seu dinheiro de volta. Sem perguntas, sem enrolação e sem letras miúdas.</p>
+				<div class="link">
+					<a class="cta cta-garantia pulsar" href="#oferta">QUERO EXPERIMENTAR</a>
+					<img src="https://insuglico.com.br/files/c/2209221710560.webp" alt="COMPRA 100% SEGURA" width="500" height="500" class="icta">			
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Garantia !--><section id="uso">
+	<div class="container">
+		<div class="row">
+			<h2 >QUAL O MODO DE USO?</h2>
+		</div>
+		<div class="row uso">
+			<ul>
+								<li>
+					<figure><i>1</i><img src="https://insuglico.com.br/files/b/2209281933370.webp" alt="INSUGLICO - modo correto de usar" width="750" height="750"></figure>
+					<p >Coloque 1ml (12 gotas) do produto diretamente na sua boca, copo com água ou bebida de sua preferência (tem o sabor suave de abacate)</p>
+				</li>
+								<li>
+					<figure><i>2</i><img src="https://insuglico.com.br/files/b/2209281941450.webp" alt="INSUGLICO - não usar com outros produtos" width="750" height="750"></figure>
+					<p >Não ingerir com bebidas quentes ou geladas, para maior eficácia do produto</p>
+				</li>
+								<li>
+					<figure><i>3</i><img src="https://insuglico.com.br/files/b/2209281944260.webp" alt="INSUGLICO - tomar apenas uma vez ao dia" width="750" height="750"></figure>
+					<p >Tome apenas uma vez por dia e você terá o resultado esperado</p>
+				</li>
+							</ul>
+		</div>
+		<div class="row">
+			<div class="link">
+				<a class="cta cta-principal pulsar" href="#oferta">QUERO MELHORAR A DIABETES</a>
+				<img src="https://insuglico.com.br/files/c/2209221710560.webp" alt="COMPRA 100% SEGURA" width="500" height="500" class="icta">				
+			</div>
+		</div>
+	</div>
+</section><!-- Oferta !-->
+<section class="oferta" id="oferta">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h2 >Recomendamos de 3 a 8 frascos para melhores resultados!</h2>
+			</div>
+		</div>
+		<div class="row ofertas">
+			<!-- Oferta 3 frascos !-->
+			<div class="col-md-3 col-lg-3 col-sm-3">
+				<a class="cta-oferta-item" target="_blank" href="https://ev.braip.com/checkout/plalqy2o/cheq4478">					<img src="https://insuglico.com.br/files/b/2209282052151.webp" alt="5 POTES" width="750" height="750" class="of-item img-fluid">
+				</a>
+			</div>
+			<!-- Oferta 3 frascos !-->
+
+			<!-- Oferta 5 frascos !-->
+			<div class="col-md-3 col-lg-3 col-sm-3">
+				<a class="cta-oferta-item" target="_blank" href="https://ev.braip.com/checkout/plagpwy8/cheq4478">					<img src="https://insuglico.com.br/files/b/2209282052152.webp" alt="3 POTES" width="750" height="750" class="of-item img-fluid">
+				</a>
+			</div>
+			<!-- Oferta 5 frascos !-->
+
+			<!-- Oferta 1 frasco !-->
+			<div class="col-md-3 col-lg-3 col-sm-3">
+				<a class="cta-oferta-item" target="_blank" href="https://ev.braip.com/checkout/pla2e2qn/cheq4478">					<img src="https://insuglico.com.br/files/b/2209282052153.webp" alt="1 POTE" width="750" height="750" class="of-item img-fluid">
+				</a>
+			</div>
+			<!-- Oferta 1 frasco !-->
+			
+			<!-- Oferta 1 frasco !-->
+			<div class="col-md-3 col-lg-3 col-sm-3">
+				<a class="cta-oferta-item" target="_blank" href="https://ev.braip.com/checkout/pla2e2jd/cheq4478">					<img src="https://insuglico.com.br/files/b/2209282052150.webp" alt="12 FRASCOS" width="750" height="750" class="of-item img-fluid">
+				</a>
+			</div>
+			<!-- Oferta 1 frasco !-->
+
+		</div>
+	</div>
+</section>
+<!-- Oferta !--><!-- Faq !-->
+<section class="faq" id="faq">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12">
+				<h2 >DÚVIDAS FREQUENTES</h2>
+			</div>
+			<div class="col-md-12 col-lg-12 col-sm-12">
+								<div class="faq-item">
+					<button class="accordion" >
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16"><path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path></svg>O que é INSUGLICO e quais benefícios ele oferece?</button>
+					<div class="panel">
+						<p >O insuglico é o melhor suplemento natural de 2022 no combate à diabetes o único com o ultra composto americano extraído do óleo da semente de Persea . Regulando assim os níveis de açúcar do sangue acabando com os picos de insulina e baixando a glicose promovendo assim saúde ao seu usuário .</p>
+					</div>
+				</div>
+								<div class="faq-item">
+					<button class="accordion" >
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16"><path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path></svg>Preciso de receita para comprar INSUGLICO?</button>
+					<div class="panel">
+						<p >O INSUGLICO não é um medicamento, portanto você pode tomá-lo sem receita médica. No entanto, mulheres grávidas e lactantes devem entrar em contato com uma nutricionista antes de iniciar o tratamento.</p>
+					</div>
+				</div>
+								<div class="faq-item">
+					<button class="accordion" >
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16"><path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path></svg>Qual o prazo de entrega?</button>
+					<div class="panel">
+						<p >O prazo médio de entrega para o Brasil é de 5 a 10 dias úteis. O produto só é enviado após a confirmação do seu pagamento pela administradora do seu cartão de crédito ou após a confirmação do seu pagamento do boleto. Lembrando que estamos com promoção de FRETE GRÁTIS por tempo limitado e a compra no cartão acelera o processamento do seu pedido.</p>
+					</div>
+				</div>
+								<div class="faq-item">
+					<button class="accordion" >
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16"><path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path></svg>Por quanto tempo devo utilizar?</button>
+					<div class="panel">
+						<p >Recomendamos o uso por no mínimo 3 meses para obter os melhores resultados, e todos os efeitos do composto. Pode também, ser utilizado sempre, até mesmo para a prevenção.</p>
+					</div>
+				</div>
+								<div class="faq-item">
+					<button class="accordion" >
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16"><path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path></svg>INSUGLICO tem autorização da Anvisa?</button>
+					<div class="panel">
+						<p >Sim, o Insuglico é certificado e autorizado para comercialização em todo território Nacional através do anexo 1 da RDC 27/2010 em conformidade com a RDC 23/2000 da ANVISA.</p>
+					</div>
+				</div>
+								<div class="faq-item">
+					<button class="accordion" >
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16"><path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path></svg>Como tomar o INSUGLICO?</button>
+					<div class="panel">
+						<p >Você precisa tomar 12 gotas ao dias após a principal refeição do dia.</p>
+					</div>
+				</div>
+							</div>
+
+			<script>
+				var acc = document.getElementsByClassName("accordion");
+				var i;
+
+				for (i = 0; i < acc.length; i++) {
+					acc[i].addEventListener("click", function() {
+						this.classList.toggle("active");
+						var panel = this.nextElementSibling;
+						if (panel.style.maxHeight) {
+							panel.style.maxHeight = null;
+						} else {
+							panel.style.maxHeight = panel.scrollHeight + "px";
+						}
+					});
+				}
+			</script>
+		</div>
+	</div>
+</section>
+<!-- Faq !--><!-- Whatsapp !-->
+<section class="whatsapp" id="whatsapp">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12">
+				<img src="https://insuglico.com.br/files/b/2209222048280.webp" alt="whatsapp" width="750" height="750" class="icon-wpp img-fluid">
+				<h2 >QUER FALAR COM UMA DE NOSSAS ATENDENTES?</h2>
+				<h3 >Se você possui dúvidas e quer falar direto com uma de nossas consultoras, disponibilizamos um Whatsapp Exclusivo. Para acessar clique no botão abaixo.</h3>
+
+				<div class="link">
+						<a class="whats pulsar" href="https://api.whatsapp.com/send?phone=5537991461343&text=Ol%C3%A1%2C%20Quero%20saber%20mais%20sobre%20o%20INSUGLICO.%20">
+														<img src="https://insuglico.com.br/files/d/2209222053180.svg" alt="whatsapp" width="250" height="250">
+							<p >ATENDIMENTO VIA WHATSAPP</p>
+						</a>			
+					</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Whatsapp !-->	</main>
+	<!-- Conteúdo geral !-->
+	<!-- Footer !-->
+<footer class="footer" id="footer">
+	<div class="container">
+		<div class="row">
+			<div class="colm-d-3 col-lg-3 col-sm-3">
+				<img src="https://insuglico.com.br/files/c/2209222114370.webp" alt="INSUGLICO" width="500" height="500">
+			</div>
+			<div class="colm-d-3 col-lg-3 col-sm-3">
+				<h4>LINKS ÚTEIS</h4>
+				<a class="link-ft" href="">Aviso Legal</a>
+				<a class="link-ft" href="">Tire todas as suas dúvidas</a>
+				<a class="link-ft" href="">Termos e Condições</a>
+				<a class="link-ft" href="">Rastrear Pedido</a>
+			</div>
+			<div class="colm-d-3 col-lg-3 col-sm-3">
+				<h4>FORMAS DE PAGAMENTO</h4>
+				<img src="https://insuglico.com.br/files/c/2209222114371.webp" alt="FORMAS DE PAGAMENTO" width="500" height="500">
+			</div>
+			<div class="colm-d-3 col-lg-3 col-sm-3">
+				<h4>COMPRA 100% SEGURA</h4>
+				<img src="https://insuglico.com.br/files/c/2209222114372.webp" alt="SITE 100% SEGURO" width="500" height="500">
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- Footer !-->		<div id="fb-root"></div>
+	<script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6"></script>  
+	<script src="https://insuglico.com.br/app/libs/main.js?v220928204423"></script>
+	<!-- JS Bootstrap !-->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.min.js"></script>
+	<!-- JS Bootstrap !-->
+</body>
+</html>
