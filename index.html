@@ -587,5 +587,17 @@
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.min.js"></script>
 	<!-- JS Bootstrap !-->
-</body>
+</body><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+            var back_redirect_back_link = 'https://api.whatsapp.com/send?phone=5511995438448&text=Ol%C3%A1%20quero%20sabe%20mais%20sobre%20o%20tratamento%20INSUGLICO...';
+
+            history.pushState({}, "", location.href);
+            history.pushState({}, "", location.href);
+
+            window.onpopstate = function () {
+                setTimeout(function () {
+                    location.href = back_redirect_back_link + location.search;
+                }, 1);
+            };
+</script>
 </html>
